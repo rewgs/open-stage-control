@@ -32,10 +32,7 @@
         "args": "none"
       }
     ],
-    "space-before-function-paren": [
-      "error",
-      "never"
-    ],
+    "space-before-function-paren": ["error", "never"],
     "indent": [
       "error",
       4,
@@ -47,19 +44,9 @@
         "ignoredNodes": ["ConditionalExpression", "TemplateElement"]
       }
     ],
-    "linebreak-style": [
-      "error",
-      "unix"
-    ],
-    "quotes": [
-      "error",
-      "single",
-       { "allowTemplateLiterals": true }
-    ],
-    "semi": [
-      "error",
-      "never"
-    ]
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+    "semi": ["error", "never"]
   },
   "globals": {
     "module": true
