@@ -18,7 +18,7 @@ let qrcode = "";
 function createServer(route) {
     if (settings.read("use-ssl")) {
         http = require("https");
-        require("./ssl");
+        require("./ssl.js");
         return http.createServer(settings.read("ssl-certificate"), route);
     } else {
         return http.createServer(route);
@@ -29,13 +29,13 @@ var path = require("path"),
     fs = require("fs"),
     send = require("send"),
     replaceStream = require("replacestream"),
-    auth = require("./auth"),
+    auth = require("./auth.mjs"),
     server = createServer(auth ? auth.check(httpRoute) : httpRoute),
-    Ipc = require("./ipc/server"),
+    Ipc = require("./ipc/server.js"),
     ipc = new Ipc(server),
-    theme = require("./theme").init(),
-    zeroconf = require("./zeroconf"),
-    { resolveHomeDir } = require("./utils"),
+    theme = require("./theme.js").init(),
+    zeroconf = require("./zeroconf.js"),
+    { resolveHomeDir } = require("./utils.js"),
     prod = !process.argv[0].includes("node_modules"),
     debug = settings.read("debug"),
     osc = {},
@@ -295,4 +295,4 @@ module.exports = {
     eventEmitter: eventEmitter
 };
 
-osc = require("./osc").server;
+osc = require("./osc/index.js").server;

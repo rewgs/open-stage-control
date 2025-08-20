@@ -13,7 +13,7 @@ install({ handleUncaughtExceptions });
 //     node = false;
 
 import "./settings.js";
-import { DocsServer } from "./docs-server.js";
+import { DocsServer } from "./docs-server.mjs";
 
 const dev = process.argv[0].includes("node_modules");
 
@@ -74,11 +74,11 @@ if (!process.versions.electron || process.env.ELECTRON_RUN_AS_NODE) {
 }
 
 function openClient() {
-    var app = require("./electron-app");
+    var app = require("./electron-app.mjs");
     var address = settings.appAddresses()[0];
 
     var launch = () => {
-        var win = require("./electron-window")({
+        var win = require("./electron-window.js")({
             address: address,
             shortcuts: true,
             fullscreen: settings.read("fullscreen"),
@@ -243,7 +243,7 @@ function startLauncher() {
     global.launcherSharedGlobals = {
         settings: settings,
         openDocs: openDocs,
-        midilist: require("./midi").list
+        midilist: require("./midi.js").list
     };
     var path = require("path"),
         address =
@@ -257,7 +257,7 @@ function startLauncher() {
     require("@electron/remote/main").initialize();
 
     app.on("ready", function () {
-        launcher = require("./electron-window")({
+        launcher = require("./electron-window.js")({
             address: address,
             shortcuts: dev,
             width: 680,
@@ -277,7 +277,7 @@ function startLauncher() {
         require("@electron/remote/main").enable(launcher.webContents);
 
         if (settings.read("useTray")) {
-            tray = require("./tray")({
+            tray = require("./tray.js")({
                 window: launcher,
                 openClient: openClient,
                 app: app,
@@ -357,10 +357,10 @@ if (settings.read("docs")) {
 } else if (node || (settings.cli && settings.read("no-gui"))) {
     // node mode: minimal server startup
 
-    var server = require("./server"),
-        osc = require("./osc"),
-        callbacks = require("./callbacks"),
-        zeroconf = require("./zeroconf");
+    var server = require("./server.js"),
+        osc = require("./osc/index.js"),
+        callbacks = require("./callbacks.mjs"),
+        zeroconf = require("./zeroconf.js");
 
     server.bindCallbacks(callbacks);
 
@@ -395,7 +395,7 @@ if (settings.read("docs")) {
     // - electron process: launcher and/or built-in client(s)
     // - node process: server (node mode in a forked process)
 
-    app = require("./electron-app");
+    app = require("./electron-app.mjs");
 
     app.on("ready", () => {
         process.on("SIGINT", function () {

@@ -95,9 +95,9 @@
     ├── address.js              -> FINISHED
     ├── auth.js                 -> FINISHED
     ├── callbacks.js            -> FINISHED
-    ├── custom-module.js
-    ├── docs-server.js
-    ├── electron-app.js
+    ├── custom-module.js        -> FINISHED
+    ├── docs-server.js          -> FINISHED
+    ├── electron-app.js         -> FINISHED
     ├── electron-window.js
     ├── fragment-manager.js
     ├── index.js                -> FINISHED

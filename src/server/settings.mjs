@@ -10,7 +10,7 @@ import "node:fs";
 import "yargs";
 import { path } from "node:path";
 
-import "./address.js";
+import "./address.mjs";
 import "./options.js";
 
 import infos from "../../package.json" with { type: "json" };
