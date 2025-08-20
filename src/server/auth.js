@@ -1,22 +1,25 @@
-var settings = require('./settings'),
-    auth = null
+// var settings = require("./settings"),
+// auth = null;
 
-if (settings.read('authentication')) {
+import "./settings.js";
 
-    var [name, pwd] = settings.read('authentication').split(':'),
-        httpAuth = require('http-auth')
+var auth = null;
+
+// NOTE: This block was not changed -- only imports above and exports below.
+if (settings.read("authentication")) {
+    var [name, pwd] = settings.read("authentication").split(":"),
+        httpAuth = require("http-auth");
 
     auth = httpAuth.basic(
         {
-            realm: 'Open Stage Control'
+            realm: "Open Stage Control"
         },
         (username, password, callback) => {
             // Custom authentication method.
-            callback(username === name && password === pwd)
+            callback(username === name && password === pwd);
         }
-    )
-
+    );
 }
 
-
-module.exports = auth
+// module.exports = auth;
+export default auth;

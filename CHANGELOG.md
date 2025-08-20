@@ -92,9 +92,9 @@
 │   ├── terminal.js
 │   └── toolbar.js
 └── server
-    ├── address.js
-    ├── auth.js
-    ├── callbacks.js
+    ├── address.js              -> FINISHED
+    ├── auth.js                 -> FINISHED
+    ├── callbacks.js            -> FINISHED
     ├── custom-module.js
     ├── docs-server.js
     ├── electron-app.js
@@ -111,13 +111,13 @@
     │   ├── osc.js
     │   ├── tcp.js
     │   └── udp.js
-    ├── server.js
+    ├── server.js               -> FINISHED
     ├── settings.js             -> FINISHED
     ├── ssl.js
     ├── theme.js
     ├── tray.js
-    ├── utils.js
-    └── zeroconf.js
+    ├── utils.js                -> FINISHED
+    └── zeroconf.js             -> FINISHED
 ```
 
 ## 1.29.8
