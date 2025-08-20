@@ -2,7 +2,7 @@
 
 ## 1.29.9-dev
 
-- Changing all instances of `var` to `let` or `const`.
+- Changing all instances of `var` in import blocks to `let` or `const`. Note that other instances of `var` will be dealt with later.
 - Migrating from CommonJS (CJS) to ECMAScript Modules (ESM):
 
 ```
@@ -98,14 +98,14 @@
     ├── custom-module.js        -> FINISHED
     ├── docs-server.js          -> FINISHED
     ├── electron-app.js         -> FINISHED
-    ├── electron-window.js
-    ├── fragment-manager.js
+    ├── electron-window.js      -> FINISHED
+    ├── fragment-manager.js     -> FINISHED
     ├── index.js                -> FINISHED
     ├── ipc
     │   ├── client.js
     │   └── server.js
-    ├── midi.js
-    ├── options.js
+    ├── midi.js                 -> FINISHED
+    ├── options.js              -> FINISHED
     ├── osc
     │   ├── index.js
     │   ├── osc.js
@@ -113,9 +113,9 @@
     │   └── udp.js
     ├── server.js               -> FINISHED
     ├── settings.js             -> FINISHED
-    ├── ssl.js
-    ├── theme.js
-    ├── tray.js
+    ├── ssl.js                  -> FINISHED
+    ├── theme.js                -> FINISHED
+    ├── tray.js                 -> FINISHED
     ├── utils.js                -> FINISHED
     └── zeroconf.js             -> FINISHED
 ```
