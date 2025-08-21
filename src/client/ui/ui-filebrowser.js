@@ -1,7 +1,7 @@
 var locales = require("../locales/index.mjs"),
     html = require("nanohtml"),
     raw = require("nanohtml/raw"),
-    ipc = require("../ipc"),
+    ipc = require("../ipc/index.mjs"),
     doubleClick = require("../events/double-click"),
     { icon } = require("./utils.mjs"),
     UiModal = require("./ui-modal"),

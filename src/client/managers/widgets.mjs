@@ -2,7 +2,7 @@
 //     ipc = require("../ipc/");
 
 import EventEmitter from "../events/event-emitter.mjs";
-import ipc from "../ipc";
+import ipc from "../ipc/index.mjs";
 
 class WidgetManager extends EventEmitter {
     constructor() {
@@ -346,4 +346,4 @@ class WidgetManager extends EventEmitter {
 
 // var widgetManager = new WidgetManager();
 // module.exports = widgetManager;
-export default new WidgetManager();
+export const widgetManager = new WidgetManager();

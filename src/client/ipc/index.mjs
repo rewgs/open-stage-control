@@ -1,9 +1,17 @@
-var EventEmitter = require("../events/event-emitter.mjs"),
-    cache = require("../managers/cache.mjs"),
-    { nanoid } = require("nanoid"),
-    uuid,
-    notifications,
-    locales;
+// var EventEmitter = require("../events/event-emitter.mjs"),
+//     cache = require("../managers/cache.mjs"),
+//     { nanoid } = require("nanoid"),
+//     uuid,
+//     notifications,
+//     locales;
+
+import EventEmitter from "../events/event-emitter.mjs";
+import cache from "../managers/cache.mjs";
+import { nanoid } from "nanoid";
+import { notifications } from "../ui/notifications.mjs";
+import locales from "../locales/index.mjs";
+
+let uuid;
 
 var localUuid = ENV.id || cache.get("osc.uuid", false);
 if (localUuid) {
@@ -13,10 +21,11 @@ if (localUuid) {
     cache.set("uuid", uuid, false);
 }
 
-setTimeout(() => {
-    notifications = require("../ui/notifications.mjs");
-    locales = require("../locales/index.mjs");
-});
+// Seem unnecessary? Moving these imports above with others.
+// setTimeout(() => {
+//     notifications = require("../ui/notifications.mjs");
+//     locales = require("../locales/index.mjs");
+// });
 
 var reconnectTimeout = 500,
     hearbeatInterval = 5000,
@@ -56,7 +65,7 @@ class Ipc extends EventEmitter {
     }
 
     init() {
-        var callbacks = require("./callbacks.js");
+        var callbacks = require("./callbacks.mjs");
 
         for (let i in callbacks) {
             let callback = callbacks[i];
@@ -166,6 +175,7 @@ class Ipc extends EventEmitter {
     }
 }
 
-var ipc = new Ipc();
+// var ipc = new Ipc();
+// module.exports = ipc;
 
-module.exports = ipc;
+export let ipc = new Ipc();

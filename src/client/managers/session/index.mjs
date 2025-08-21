@@ -13,7 +13,7 @@
 //     EventEmitter = require("../../events/event-emitter"),
 // { deepEqual } = require("../../utils");
 
-import "../../ipc/index.js";
+import "../../ipc/index.mjs";
 import "../../parser.mjs";
 import "../../editor/index.js";
 import uiFilebrowser from "../../ui/ui-filebrowser.js";

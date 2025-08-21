@@ -9,7 +9,7 @@
 // var { leftUiSidePanel, rightUiSidePanel } = require("./index.mjs");
 // var uiConsole = require("../ui/ui-console");
 
-import ipc from "../ipc";
+import ipc from "../ipc/index.mjs";
 import locales from "../locales/index.mjs";
 import { notifications } from "./notifications.mjs";
 import { getFullscreen } from "./fullscreen.mjs";

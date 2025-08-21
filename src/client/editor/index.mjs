@@ -30,7 +30,7 @@ import UiDragResize from "../ui/ui-dragresize.js";
 import notifications from "../ui/notifications";
 import locales from "../locales/index.mjs";
 import { leftUiSidePanel, rightUiSidePanel } from "../ui/";
-import ipc from "../ipc";
+import ipc from "../ipc/index.mjs";
 import sessionManager from "../managers/session/index.mjs";
 import "./context-menu.mjs";
 

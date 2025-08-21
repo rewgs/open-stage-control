@@ -1,5 +1,7 @@
-var cache = require("./managers/cache"),
-    localBackup = cache.get("backup", false);
+// var cache = require("./managers/cache");
+import cache from "./managers/cache.mjs";
+
+let localBackup = cache.get("backup", false);
 
 // module.exports = {
 //     exists: localBackup !== null,
@@ -60,60 +62,59 @@ var cache = require("./managers/cache"),
 //     }
 // };
 
-export default {
-    exists: localBackup !== null,
-    save: () => {
-        var session = require("./managers/session/"),
-            state = require("./managers/state"),
-            editor = require("./editor/");
+export let exists = localBackup !== null;
 
-        if (session.session) {
-            cache.set(
-                "backup",
-                {
-                    session: session.session.data,
-                    saveMode: session.saveMode,
-                    sessionPath: session.sessionPath,
-                    fragments: session.fragments,
-                    state: state.get(),
-                    history: editor.history,
-                    historyState: editor.historyState,
-                    editorEnabled: editor.enabled
-                },
-                false
-            );
-        }
-    },
+export const save = () => {
+    var session = require("./managers/session/"),
+        state = require("./managers/state"),
+        editor = require("./editor/");
 
-    load: () => {
-        var session = require("./managers/session/"),
-            state = require("./managers/state"),
-            editor = require("./editor/"),
-            ipc = require("./ipc/");
+    if (session.session) {
+        cache.set(
+            "backup",
+            {
+                session: session.session.data,
+                saveMode: session.saveMode,
+                sessionPath: session.sessionPath,
+                fragments: session.fragments,
+                state: state.get(),
+                history: editor.history,
+                historyState: editor.historyState,
+                editorEnabled: editor.enabled
+            },
+            false
+        );
+    }
+};
 
-        if (localBackup) {
-            var data = localBackup;
+export const load = () => {
+    var session = require("./managers/session/"),
+        state = require("./managers/state"),
+        editor = require("./editor/"),
+        ipc = require("./ipc/index.mjs");
 
-            cache.remove("backup", false);
-            for (let k in data.fragments) {
-                session.setFragment({
-                    path: k,
-                    fileContent: JSON.parse(data.fragments[k])
-                });
-            }
-            session.load(data.session, () => {
-                session.setSaveMode(data.saveMode);
-                state.set(data.state, false);
+    if (localBackup) {
+        var data = localBackup;
 
-                editor.clearHistory();
-                editor.history = data.history;
-                editor.historyState = data.historyState;
-
-                if (data.editorEnabled) editor.enable();
-
-                ipc.send("sessionSetPath", { path: data.sessionPath });
-                session.setSessionPath(data.sessionPath);
+        cache.remove("backup", false);
+        for (let k in data.fragments) {
+            session.setFragment({
+                path: k,
+                fileContent: JSON.parse(data.fragments[k])
             });
         }
+        session.load(data.session, () => {
+            session.setSaveMode(data.saveMode);
+            state.set(data.state, false);
+
+            editor.clearHistory();
+            editor.history = data.history;
+            editor.historyState = data.historyState;
+
+            if (data.editorEnabled) editor.enable();
+
+            ipc.send("sessionSetPath", { path: data.sessionPath });
+            session.setSessionPath(data.sessionPath);
+        });
     }
 };

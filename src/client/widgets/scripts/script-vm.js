@@ -4,7 +4,7 @@ var widgetManager = require("../../managers/widgets.mjs"),
     { deepCopy } = require("../../utils"),
     { urlParser } = require("../utils"),
     Vm = require("../vm"),
-    ipc = require("../../ipc"),
+    ipc = require("../../ipc/index.mjs"),
     uiFilebrowser = require("../../ui/ui-filebrowser"),
     toolbar;
 

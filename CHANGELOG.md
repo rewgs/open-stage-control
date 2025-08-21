@@ -24,8 +24,8 @@
         - globals.js: _nothing to do_
         - index.js: _nothing to do_
         - ipc/
-            - callbacks.js
-            - index.js
+            - callbacks.js: **FINISHED**
+            - index.js: **FINISHED**
         - locales/
             - de.js: **FINISHED**
             - en.js: **FINISHED**

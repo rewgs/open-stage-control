@@ -8,7 +8,7 @@
 //     locales = require("../locales"),
 //     { deepCopy } = require("../utils");
 
-import ipc from "../ipc";
+import ipc from "../ipc/index.mjs";
 import widgetManager from "./widgets.mjs";
 import cache from "./cache.mjs";
 import uiFilebrowser from "../ui/ui-filebrowser";
