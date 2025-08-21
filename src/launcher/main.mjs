@@ -9,9 +9,9 @@ import "nanohtml";
 import "semver";
 import { ipcRenderer } from "electron";
 
-import "./settings.js";
-import "./terminal.js";
-import "./toolbar.js";
+import "./settings.mjs";
+import "./terminal.mjs";
+import "./toolbar.mjs";
 
 DOM.get(document, "#osc-greeting-header")[0].appendChild(
     html`${window.PACKAGE.productName}

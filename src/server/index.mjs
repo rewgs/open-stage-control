@@ -12,7 +12,7 @@ install({ handleUncaughtExceptions });
 //     serverProcess = null,
 //     node = false;
 
-import "./settings.js";
+import "./settings.mjs";
 import { DocsServer } from "./docs-server.mjs";
 
 const dev = process.argv[0].includes("node_modules");
@@ -78,7 +78,7 @@ function openClient() {
     var address = settings.appAddresses()[0];
 
     var launch = () => {
-        var win = require("./electron-window.js")({
+        var win = require("./electron-window.mjs")({
             address: address,
             shortcuts: true,
             fullscreen: settings.read("fullscreen"),
@@ -243,7 +243,7 @@ function startLauncher() {
     global.launcherSharedGlobals = {
         settings: settings,
         openDocs: openDocs,
-        midilist: require("./midi.js").list
+        midilist: require("./midi.mjs").list
     };
     var path = require("path"),
         address =
@@ -257,7 +257,7 @@ function startLauncher() {
     require("@electron/remote/main").initialize();
 
     app.on("ready", function () {
-        launcher = require("./electron-window.js")({
+        launcher = require("./electron-window.mjs")({
             address: address,
             shortcuts: dev,
             width: 680,
@@ -277,7 +277,7 @@ function startLauncher() {
         require("@electron/remote/main").enable(launcher.webContents);
 
         if (settings.read("useTray")) {
-            tray = require("./tray.js")({
+            tray = require("./tray.mjs")({
                 window: launcher,
                 openClient: openClient,
                 app: app,
@@ -357,10 +357,10 @@ if (settings.read("docs")) {
 } else if (node || (settings.cli && settings.read("no-gui"))) {
     // node mode: minimal server startup
 
-    var server = require("./server.js"),
-        osc = require("./osc/index.js"),
+    var server = require("./server.mjs"),
+        osc = require("./osc/index.mjs"),
         callbacks = require("./callbacks.mjs"),
-        zeroconf = require("./zeroconf.js");
+        zeroconf = require("./zeroconf.mjs");
 
     server.bindCallbacks(callbacks);
 

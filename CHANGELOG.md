@@ -8,7 +8,7 @@
         - backup.js: **FINISHED**
         - dom.js: **FINISHED**
         - editor/
-            - context-menu.js
+            - context-menu.js: **FINISHED**
             - data-workers.js
             - diff.js
             - index.js
@@ -21,8 +21,8 @@
             - resize.js
             - transform-coords.js
             - utils.js
-        - globals.js: **nothing to do**
-        - index.js: **nothing to do**
+        - globals.js: _nothing to do_
+        - index.js: _nothing to do_
         - ipc/
             - callbacks.js
             - index.js
@@ -32,15 +32,17 @@
             - fr.js
             - index.js
             - pl.js
-        - managers
-            - cache.js
-            - session/ <!-- TODO: -->
-            - state.js
-            - widgets.js
+        - managers/
+            - cache.js: **FINISHED**
+            - session/
+                - index.js: **FINISHED**
+                - session.js: **FINISHED**
+            - state.js: **FINISHED**
+            - widgets.js: **FINISHED**
         - osc.js
-        - parser.js
-        - remote-control.js
-        - stacktrace.js
+        - parser.js: **FINISHED**
+        - remote-control.js: **FINISHED**
+        - stacktrace.js: **FINISHED**
         - ui/
             - context-menu.js
             - fullscreen.js
@@ -106,9 +108,9 @@
         - options.js: **FINISHED**
         - osc
             - index.js: **FINISHED**
-            - osc.js: **IN PROGRESS** <!-- These three files need to import directly from the osc package instead of osc.js, -->
-            - tcp.js: **IN PROGRESS** <!-- as the latter simply imports/exports a couple things from it. -->
-            - udp.js: **IN PROGRESS** <!-- However, all other imports/exports have been finished. -->
+            - osc.js: **_IN PROGRESS_** <!-- These three files need to import directly from the osc package instead of osc.js, -->
+            - tcp.js: **_IN PROGRESS_** <!-- as the latter simply imports/exports a couple things from it. -->
+            - udp.js: **_IN PROGRESS_** <!-- However, all other imports/exports have been finished. -->
         - server.js: **FINISHED**
         - settings.js: **FINISHED**
         - ssl.js: **FINISHED**

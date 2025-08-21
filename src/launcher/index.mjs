@@ -8,6 +8,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
     require("../client/ui/zoom");
 
     setTimeout(() => {
-        require("./main");
+        require("./main.mjs");
     }, 10);
 });

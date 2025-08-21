@@ -1,7 +1,7 @@
 // var settings = require("./settings"),
 // auth = null;
 
-import "./settings.js";
+import "./settings.mjs";
 
 var auth = null;
 

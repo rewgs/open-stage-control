@@ -7,7 +7,7 @@
 //     loadedModules = {},
 //     globalObject = {};
 
-import "./settings.js";
+import "./settings.mjs";
 import "node:fs";
 import "node:path";
 import "node:vm";

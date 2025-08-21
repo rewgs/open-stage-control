@@ -6,7 +6,7 @@
 //     open = require("open"),
 //     address = require("./address");
 
-import { EventEmitter } from "events";
+import { EventEmitter } from "node:events";
 import "http";
 import "send";
 import "node:path";

@@ -12,8 +12,8 @@ import EventEmitter from "node:events";
 
 import "../settings.mjs";
 import "../midi.mjs";
-import oscTCPServer from "./tcp.js";
-import oscUDPServer from "./udp.js";
+import oscTCPServer from "./tcp.mjs";
+import oscUDPServer from "./udp.mjs";
 import ipc from "../server.mjs";
 import CustomModule from "../custom-module.mjs";
 

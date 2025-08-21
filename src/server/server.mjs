@@ -7,10 +7,10 @@
 
 import "http";
 
-import { EventEmitter } from "events";
+import { EventEmitter } from "node:events";
 import { QRCode } from "qrcode";
 
-import "./settings.js";
+import "./settings.mjs";
 
 let eventEmitter = new EventEmitter();
 let qrcode = "";
@@ -18,7 +18,7 @@ let qrcode = "";
 function createServer(route) {
     if (settings.read("use-ssl")) {
         http = require("https");
-        require("./ssl.js");
+        require("./ssl.mjs");
         return http.createServer(settings.read("ssl-certificate"), route);
     } else {
         return http.createServer(route);
@@ -31,11 +31,11 @@ var path = require("path"),
     replaceStream = require("replacestream"),
     auth = require("./auth.mjs"),
     server = createServer(auth ? auth.check(httpRoute) : httpRoute),
-    Ipc = require("./ipc/server.js"),
+    Ipc = require("./ipc/server.mjs"),
     ipc = new Ipc(server),
-    theme = require("./theme.js").init(),
-    zeroconf = require("./zeroconf.js"),
-    { resolveHomeDir } = require("./utils.js"),
+    theme = require("./theme.mjs").init(),
+    zeroconf = require("./zeroconf.mjs"),
+    { resolveHomeDir } = require("./utils.mjs"),
     prod = !process.argv[0].includes("node_modules"),
     debug = settings.read("debug"),
     osc = {},
@@ -295,4 +295,4 @@ module.exports = {
     eventEmitter: eventEmitter
 };
 
-osc = require("./osc/index.js").server;
+osc = require("./osc/index.mjs").server;

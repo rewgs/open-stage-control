@@ -3,7 +3,7 @@
 //     infos = require("../package.json");
 
 import { app, Menu, shell, BrowserWindow } from "electron";
-import "./settings.js";
+import "./settings.mjs";
 import infos from "../../package.json" with { type: "json" };
 
 app.setPath("userData", settings.configPath);

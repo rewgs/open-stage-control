@@ -23,7 +23,7 @@ import { ipcRenderer } from "electron";
 import { Menu, MenuItem, getGlobal } from "@electron/remote";
 import { keyboardjs as keyboardJS } from "keyboardjs";
 
-import "./terminal.js";
+import "./terminal.mjs";
 import "./settings.mjs";
 
 let menu = new Menu();

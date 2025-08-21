@@ -11,9 +11,9 @@ import "node:path";
 import "node:fs";
 import "child_process";
 
-import "./settings.js";
-import "./osc/index.js"; // TODO: Make sure that this is importing just ./osc/index.js; even if so, is there a better way?
-import { deepCopy, resolveHomeDir } from "./utils.js";
+import "./settings.mjs";
+import "./osc/index.mjs"; // TODO: Make sure that this is importing just ./osc/index.js; even if so, is there a better way?
+import { deepCopy, resolveHomeDir } from "./utils.mjs";
 
 let fragmentManager;
 
@@ -774,7 +774,7 @@ export function fragmentLoad(data, clientId) {
 
     if (Array.isArray(data.path)) data.path = path.resolve(...data.path);
 
-    fragmentManager = fragmentManager || require("./fragment-manager.js");
+    fragmentManager = fragmentManager || require("./fragment-manager.mjs");
 
     fragmentManager.loadFragment(data, clientId);
 }

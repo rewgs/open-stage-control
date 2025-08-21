@@ -14,7 +14,7 @@ import { dialog, fs, getGlobal } from "@electron/remote";
 import "nanohtml";
 import "nanohtml/raw";
 
-import "./terminal.js";
+import "./terminal.mjs";
 import icon from "../client/ui/utils.js";
 
 let settings = getGlobal("launcherSharedGlobals");

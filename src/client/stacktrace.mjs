@@ -1,6 +1,11 @@
-var StackTrace = require("stacktrace-js"),
-    ipc = require("./ipc"),
-    uiConsole;
+// var StackTrace = require("stacktrace-js"),
+//     ipc = require("./ipc"),
+//     uiConsole;
+
+import StackTrace from "stacktrace-js";
+import ipc from "./ipc";
+
+let uiConsole;
 
 window.onerror = function (msg, url, row, col, error) {
     StackTrace.fromError(error)

@@ -17,7 +17,7 @@ import { BrowserWindow, dialog, shell, screen, Menu, MenuItem } from "electron";
 import shortcut from "electron-localshortcut";
 import app from "./electron-app.mjs";
 import "./settings.mjs";
-import "./theme.js";
+import "./theme.mjs";
 
 // module.exports = function (options = {}) {
 //     var window;

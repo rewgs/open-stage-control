@@ -1,11 +1,19 @@
-var { updateWidget } = require("./editor/data-workers"),
-    editor = require("./editor"),
-    widgetManager = require("./managers/widgets"),
-    stateManager = require("./managers/state"),
-    sessionManager = require("./managers/session"),
-    deepExtend = require("deep-extend"),
-    notifications = require("./ui/notifications"),
-    uiConsole = require("./ui/ui-console");
+// var { updateWidget } = require("./editor/data-workers"),
+//     editor = require("./editor"),
+//     widgetManager = require("./managers/widgets.mjs"),
+//     stateManager = require("./managers/state.mjs"),
+//     sessionManager = require("./managers/session/index.mjs"),
+//     deepExtend = require("deep-extend"),
+//     notifications = require("./ui/notifications"),
+//     uiConsole = require("./ui/ui-console");
+
+import { updateWidget } from "./editor/data-workers";
+import editor from "./editor";
+import widgetManager from "./managers/widgets.mjs";
+import sessionManager from "./managers/session/index.mjs";
+import deepExtend from "deep-extend";
+import notifications from "./ui/notifications";
+import uiConsole from "./ui/ui-console";
 
 var callbacks = {
     "/EDIT": function (args, custom_module) {
@@ -257,13 +265,23 @@ var callbacks = {
     }
 };
 
-module.exports = {
-    exec: function (name, args, custom_module) {
-        if (callbacks[name]) {
-            callbacks[name](args, custom_module);
-        }
-    },
-    exists: function (name) {
-        return name in callbacks;
+// module.exports = {
+//     exec: function (name, args, custom_module) {
+//         if (callbacks[name]) {
+//             callbacks[name](args, custom_module);
+//         }
+//     },
+//     exists: function (name) {
+//         return name in callbacks;
+//     }
+// };
+
+export function exec(name, args, custom_module) {
+    if (callbacks[name]) {
+        callbacks[name](args, custom_module);
     }
-};
+}
+
+export function exists(name) {
+    return name in callbacks;
+}
