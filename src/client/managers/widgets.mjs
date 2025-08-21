@@ -1,7 +1,7 @@
 // var EventEmitter = require("../events/event-emitter"),
 //     ipc = require("../ipc/");
 
-import EventEmitter from "../events/event-emitter";
+import EventEmitter from "../events/event-emitter.mjs";
 import ipc from "../ipc";
 
 class WidgetManager extends EventEmitter {

@@ -1,4 +1,4 @@
-var EventEmitter = require("../events/event-emitter"),
+var EventEmitter = require("../events/event-emitter.mjs"),
     cache = require("../managers/cache.mjs"),
     { nanoid } = require("nanoid"),
     uuid,

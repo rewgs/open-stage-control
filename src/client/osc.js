@@ -1,6 +1,6 @@
 // TODO: Change to ESM after editing stuff in managers/ and events/
 var widgetManager = require("./managers/widgets.mjs"),
-    EventEmitter = require("./events/event-emitter"),
+    EventEmitter = require("./events/event-emitter.mjs"),
     ipc = require("./ipc/"),
     { deepEqual } = require("./utils");
 

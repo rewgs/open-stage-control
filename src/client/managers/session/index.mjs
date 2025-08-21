@@ -25,7 +25,7 @@ import { saveAs } from "file-saver";
 import widgetManager from "../widgets.mjs";
 import locales from "../../locales/index.js";
 import Session from "./session.mjs";
-import EventEmitter from "../../events/event-emitter.js";
+import EventEmitter from "../../events/event-emitter.mjs";
 import { deepEqual } from "../../utils.mjs";
 
 var SessionManager = class SessionManager extends EventEmitter {

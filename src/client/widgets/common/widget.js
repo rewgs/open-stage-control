@@ -1,4 +1,4 @@
-var EventEmitter = require("../../events/event-emitter"),
+var EventEmitter = require("../../events/event-emitter.mjs"),
     osc = require("../../osc"),
     { nanoid } = require("nanoid"),
     widgetManager = require("../../managers/widgets.mjs"),
