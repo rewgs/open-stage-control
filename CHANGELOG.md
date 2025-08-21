@@ -7,8 +7,8 @@
 
 ```
 ├── client
-│   ├── backup.js
-│   ├── dom.js
+│   ├── backup.js                   -> FINISHED
+│   ├── dom.js                      -> FINISHED
 │   ├── editor
 │   │   ├── context-menu.js
 │   │   ├── data-workers.js
@@ -23,8 +23,8 @@
 │   │   ├── resize.js
 │   │   ├── transform-coords.js
 │   │   └── utils.js
-│   ├── globals.js
-│   ├── index.js
+│   ├── globals.js                  -> Nothing to do
+│   ├── index.js                    -> Nothing to do
 │   ├── ipc
 │   │   ├── callbacks.js
 │   │   └── index.js
@@ -70,7 +70,7 @@
 │   │   ├── ui-workspace.js
 │   │   ├── utils.js
 │   │   └── zoom.js
-│   ├── utils.js
+│   ├── utils.js                    -> FINISHED
 │   └── widgets
 │       ├── basics
 │       ├── common
@@ -86,38 +86,38 @@
 │       ├── utils.js
 │       └── vm.js
 ├── launcher
-│   ├── index.js                -> FINISHED
-│   ├── main.js                 -> FINISHED
-│   ├── settings.js             -> FINISHED
-│   ├── terminal.js             -> FINISHED
-│   └── toolbar.js              -> FINISHED
+│   ├── index.js                    -> FINISHED
+│   ├── main.js                     -> FINISHED
+│   ├── settings.js                 -> FINISHED
+│   ├── terminal.js                 -> FINISHED
+│   └── toolbar.js                  -> FINISHED
 └── server
-    ├── address.js              -> FINISHED
-    ├── auth.js                 -> FINISHED
-    ├── callbacks.js            -> FINISHED
-    ├── custom-module.js        -> FINISHED
-    ├── docs-server.js          -> FINISHED
-    ├── electron-app.js         -> FINISHED
-    ├── electron-window.js      -> FINISHED
-    ├── fragment-manager.js     -> FINISHED
-    ├── index.js                -> FINISHED
+    ├── address.js                  -> FINISHED
+    ├── auth.js                     -> FINISHED
+    ├── callbacks.js                -> FINISHED
+    ├── custom-module.js            -> FINISHED
+    ├── docs-server.js              -> FINISHED
+    ├── electron-app.js             -> FINISHED
+    ├── electron-window.js          -> FINISHED
+    ├── fragment-manager.js         -> FINISHED
+    ├── index.js                    -> FINISHED
     ├── ipc
-    │   ├── client.js           -> FINISHED
-    │   └── server.js           -> FINISHED
-    ├── midi.js                 -> FINISHED
-    ├── options.js              -> FINISHED
+    │   ├── client.js               -> FINISHED
+    │   └── server.js               -> FINISHED
+    ├── midi.js                     -> FINISHED
+    ├── options.js                  -> FINISHED
     ├── osc
-    │   ├── index.js            -> FINISHED
-    │   ├── osc.js              -> IN PROGRESS -> These three files need to import directly from the osc package instead of osc.js,
-    │   ├── tcp.js              -> IN PROGRESS -> ...as the latter simply imports/exports a couple things from it.
-    │   └── udp.js              -> IN PROGRESS -> However, all other imports/exports have been finished.
-    ├── server.js               -> FINISHED
-    ├── settings.js             -> FINISHED
-    ├── ssl.js                  -> FINISHED
-    ├── theme.js                -> FINISHED
-    ├── tray.js                 -> FINISHED
-    ├── utils.js                -> FINISHED
-    └── zeroconf.js             -> FINISHED
+    │   ├── index.js                -> FINISHED
+    │   ├── osc.js                  -> IN PROGRESS -> These three files need to import directly from the osc package instead of osc.js,
+    │   ├── tcp.js                  -> IN PROGRESS -> ...as the latter simply imports/exports a couple things from it.
+    │   └── udp.js                  -> IN PROGRESS -> However, all other imports/exports have been finished.
+    ├── server.js                   -> FINISHED
+    ├── settings.js                 -> FINISHED
+    ├── ssl.js                      -> FINISHED
+    ├── theme.js                    -> FINISHED
+    ├── tray.js                     -> FINISHED
+    ├── utils.js                    -> FINISHED
+    └── zeroconf.js                 -> FINISHED
 ```
 
 ## 1.29.8
