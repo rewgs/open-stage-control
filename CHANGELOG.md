@@ -86,8 +86,8 @@
 │       ├── utils.js
 │       └── vm.js
 ├── launcher
-│   ├── index.js
-│   ├── main.js
+│   ├── index.js                -> FINISHED
+│   ├── main.js                 -> FINISHED
 │   ├── settings.js
 │   ├── terminal.js
 │   └── toolbar.js
