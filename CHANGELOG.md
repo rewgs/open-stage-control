@@ -88,9 +88,9 @@
 ├── launcher
 │   ├── index.js                -> FINISHED
 │   ├── main.js                 -> FINISHED
-│   ├── settings.js
-│   ├── terminal.js
-│   └── toolbar.js
+│   ├── settings.js             -> FINISHED
+│   ├── terminal.js             -> FINISHED
+│   └── toolbar.js              -> FINISHED
 └── server
     ├── address.js              -> FINISHED
     ├── auth.js                 -> FINISHED

@@ -1,13 +1,24 @@
-var { ipcRenderer } = require("electron"),
-    remote = require("@electron/remote"),
-    { dialog } = remote.require("electron"),
-    fs = remote.require("fs"),
-    { settings } = remote.getGlobal("launcherSharedGlobals"),
-    { icon } = require("../client/ui/utils"),
-    html = require("nanohtml"),
-    raw = require("nanohtml/raw"),
-    terminal = require("./terminal"),
-    options_remote = settings.read("options");
+// var { ipcRenderer } = require("electron");
+// var remote = require("@electron/remote");
+// var dialog = remote.require("electron");
+// var fs = remote.require("fs");
+// var settings = remote.getGlobal("launcherSharedGlobals");
+// var options_remote = settings.read("options");
+// var icon = require("../client/ui/utils");
+// var html = require("nanohtml");
+// var raw = require("nanohtml/raw");
+// var terminal = require("./terminal");
+
+import { ipcRenderer } from "electron";
+import { dialog, fs, getGlobal } from "@electron/remote";
+import "nanohtml";
+import "nanohtml/raw";
+
+import "./terminal.js";
+import icon from "../client/ui/utils.js";
+
+let settings = getGlobal("launcherSharedGlobals");
+let options_remote = settings.read("options");
 
 class Settings {
     constructor() {
@@ -285,4 +296,5 @@ class Settings {
     }
 }
 
-module.exports = new Settings();
+// module.exports = new Settings();
+export default new Settings();
