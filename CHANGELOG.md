@@ -102,15 +102,15 @@
     ├── fragment-manager.js     -> FINISHED
     ├── index.js                -> FINISHED
     ├── ipc
-    │   ├── client.js
-    │   └── server.js
+    │   ├── client.js           -> FINISHED
+    │   └── server.js           -> FINISHED
     ├── midi.js                 -> FINISHED
     ├── options.js              -> FINISHED
     ├── osc
-    │   ├── index.js
-    │   ├── osc.js
-    │   ├── tcp.js
-    │   └── udp.js
+    │   ├── index.js            -> FINISHED
+    │   ├── osc.js              -> IN PROGRESS -> These three files need to import directly from the osc package instead of osc.js,
+    │   ├── tcp.js              -> IN PROGRESS -> ...as the latter simply imports/exports a couple things from it.
+    │   └── udp.js              -> IN PROGRESS -> However, all other imports/exports have been finished.
     ├── server.js               -> FINISHED
     ├── settings.js             -> FINISHED
     ├── ssl.js                  -> FINISHED
