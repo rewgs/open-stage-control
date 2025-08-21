@@ -8,7 +8,7 @@
 //     contextMenu = new ContextMenu(),
 //     sessionManager;
 
-import { updateWidget } from "./data-workers";
+import { updateWidget } from "./data-workers.mjs";
 import { categories } from "../widgets";
 import widgetManager from "../managers/widgets.mjs";
 import { icon } from "../ui/utils";

@@ -14,7 +14,7 @@
 // { deepEqual } = require("../../utils");
 
 import "../../ipc/index.js";
-import "../../parser.js";
+import "../../parser.mjs";
 import "../../editor/index.js";
 import uiFilebrowser from "../../ui/ui-filebrowser.js";
 import uiFileupload from "../../ui/ui-fileupload.js";
@@ -22,9 +22,9 @@ import UiModal from "../../ui/ui-modal.js";
 import uiLoading from "../../ui/ui-loading.js";
 import uiConsole from "../../ui/ui-console.js";
 import { saveAs } from "file-saver";
-import widgetManager from "../widgets.js";
+import widgetManager from "../widgets.mjs";
 import locales from "../../locales/index.js";
-import Session from "./session.js";
+import Session from "./session.mjs";
 import EventEmitter from "../../events/event-emitter.js";
 import { deepEqual } from "../../utils.mjs";
 

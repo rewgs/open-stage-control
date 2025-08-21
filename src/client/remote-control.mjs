@@ -7,7 +7,7 @@
 //     notifications = require("./ui/notifications"),
 //     uiConsole = require("./ui/ui-console");
 
-import { updateWidget } from "./editor/data-workers";
+import { updateWidget } from "./editor/data-workers.mjs";
 import editor from "./editor";
 import widgetManager from "./managers/widgets.mjs";
 import sessionManager from "./managers/session/index.mjs";

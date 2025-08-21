@@ -1,5 +1,5 @@
 // TODO: Change to ESM after editing stuff in managers/ and events/
-var widgetManager = require("./managers/widgets"),
+var widgetManager = require("./managers/widgets.mjs"),
     EventEmitter = require("./events/event-emitter"),
     ipc = require("./ipc/"),
     { deepEqual } = require("./utils");
@@ -13,7 +13,7 @@ var Osc = class Osc extends EventEmitter {
         this.serverTargets = [];
 
         setTimeout(() => {
-            osc.remoteControl = require("./remote-control");
+            osc.remoteControl = require("./remote-control.mjs");
         });
     }
 

@@ -9,9 +9,9 @@
         - dom.js: **FINISHED**
         - editor/
             - context-menu.js: **FINISHED**
-            - data-workers.js
-            - diff.js
-            - index.js
+            - data-workers.js: **FINISHED**
+            - diff.js: **_IN PROGRESS_** -- exported function seems to be recursive, needs more work to make sense.
+            - index.js: **FINISHED**
         - events/
             - click.js
             - dom-events.js
