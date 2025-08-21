@@ -4,121 +4,118 @@
 
 - Changing all instances of `var` in import blocks to `let` or `const`. Note that other instances of `var` will be dealt with later.
 - Migrating from CommonJS (CJS) to ECMAScript Modules (ESM):
-
-```
-├── client
-│   ├── backup.js                   -> FINISHED
-│   ├── dom.js                      -> FINISHED
-│   ├── editor
-│   │   ├── context-menu.js
-│   │   ├── data-workers.js
-│   │   ├── diff.js
-│   │   └── index.js
-│   ├── events
-│   │   ├── click.js
-│   │   ├── dom-event.js
-│   │   ├── double-click.js
-│   │   ├── drag.js
-│   │   ├── event-emitter.js
-│   │   ├── resize.js
-│   │   ├── transform-coords.js
-│   │   └── utils.js
-│   ├── globals.js                  -> Nothing to do
-│   ├── index.js                    -> Nothing to do
-│   ├── ipc
-│   │   ├── callbacks.js
-│   │   └── index.js
-│   ├── locales
-│   │   ├── de.js
-│   │   ├── en.js
-│   │   ├── fr.js
-│   │   ├── index.js
-│   │   └── pl.js
-│   ├── managers
-│   │   ├── cache.js
-│   │   ├── session
-│   │   ├── state.js
-│   │   └── widgets.js
-│   ├── osc.js
-│   ├── parser.js
-│   ├── remote-control.js
-│   ├── stacktrace.js
-│   ├── ui
-│   │   ├── context-menu.js
-│   │   ├── fullscreen.js
-│   │   ├── index.js
-│   │   ├── init.js
-│   │   ├── ios.js
-│   │   ├── main-menu.js
-│   │   ├── notifications.js
-│   │   ├── ui-code-editor.js
-│   │   ├── ui-colorpicker.js
-│   │   ├── ui-console.js
-│   │   ├── ui-dragresize.js
-│   │   ├── ui-filebrowser.js
-│   │   ├── ui-fileupload.js
-│   │   ├── ui-inspector-field.js
-│   │   ├── ui-inspector.js
-│   │   ├── ui-keyboard.js
-│   │   ├── ui-loading.js
-│   │   ├── ui-modal.js
-│   │   ├── ui-selectarea.js
-│   │   ├── ui-sidepanel.js
-│   │   ├── ui-toolbar.js
-│   │   ├── ui-tree.js
-│   │   ├── ui-widget.js
-│   │   ├── ui-workspace.js
-│   │   ├── utils.js
-│   │   └── zoom.js
-│   ├── utils.js                    -> FINISHED
-│   └── widgets
-│       ├── basics
-│       ├── common
-│       ├── containers
-│       ├── frames
-│       ├── graphs
-│       ├── index.js
-│       ├── indicators
-│       ├── mixins
-│       ├── pads
-│       ├── scripts
-│       ├── sliders
-│       ├── utils.js
-│       └── vm.js
-├── launcher
-│   ├── index.js                    -> FINISHED
-│   ├── main.js                     -> FINISHED
-│   ├── settings.js                 -> FINISHED
-│   ├── terminal.js                 -> FINISHED
-│   └── toolbar.js                  -> FINISHED
-└── server
-    ├── address.js                  -> FINISHED
-    ├── auth.js                     -> FINISHED
-    ├── callbacks.js                -> FINISHED
-    ├── custom-module.js            -> FINISHED
-    ├── docs-server.js              -> FINISHED
-    ├── electron-app.js             -> FINISHED
-    ├── electron-window.js          -> FINISHED
-    ├── fragment-manager.js         -> FINISHED
-    ├── index.js                    -> FINISHED
-    ├── ipc
-    │   ├── client.js               -> FINISHED
-    │   └── server.js               -> FINISHED
-    ├── midi.js                     -> FINISHED
-    ├── options.js                  -> FINISHED
-    ├── osc
-    │   ├── index.js                -> FINISHED
-    │   ├── osc.js                  -> IN PROGRESS -> These three files need to import directly from the osc package instead of osc.js,
-    │   ├── tcp.js                  -> IN PROGRESS -> ...as the latter simply imports/exports a couple things from it.
-    │   └── udp.js                  -> IN PROGRESS -> However, all other imports/exports have been finished.
-    ├── server.js                   -> FINISHED
-    ├── settings.js                 -> FINISHED
-    ├── ssl.js                      -> FINISHED
-    ├── theme.js                    -> FINISHED
-    ├── tray.js                     -> FINISHED
-    ├── utils.js                    -> FINISHED
-    └── zeroconf.js                 -> FINISHED
-```
+    - client/
+        - backup.js: **FINISHED**
+        - dom.js: **FINISHED**
+        - editor/
+            - context-menu.js
+            - data-workers.js
+            - diff.js
+            - index.js
+        - events/
+            - click.js
+            - dom-events.js
+            - double-click.js
+            - drag.js
+            - event-emitter.js
+            - resize.js
+            - transform-coords.js
+            - utils.js
+        - globals.js: **nothing to do**
+        - index.js: **nothing to do**
+        - ipc/
+            - callbacks.js
+            - index.js
+        - locales/
+            - de.js
+            - en.js
+            - fr.js
+            - index.js
+            - pl.js
+        - managers
+            - cache.js
+            - session/ <!-- TODO: -->
+            - state.js
+            - widgets.js
+        - osc.js
+        - parser.js
+        - remote-control.js
+        - stacktrace.js
+        - ui/
+            - context-menu.js
+            - fullscreen.js
+            - index.js
+            - init.js
+            - ios.js
+            - main-menu.js
+            - notifications.js
+            - ui-code-editor.js
+            - ui-colorpicker.js
+            - ui-console.js
+            - ui-dragresize.js
+            - ui-filebrowser.js
+            - ui-fileupload.js
+            - ui-inspector-field.js
+            - ui-inspector.js
+            - ui-keyboard.js
+            - ui-loading.js
+            - ui-modal.js
+            - ui-selectarea.js
+            - ui-sidepanel.js
+            - ui-toolbar.js
+            - ui-tree.js
+            - ui-widget.js
+            - ui-workspace.js
+            - utils.js
+            - zoom.js
+        - utils.js: **FINISHED**
+        - widgets/
+            - basics/ <!-- TODO: -->
+            - common/ <!-- TODO: -->
+            - containers/ <!-- TODO: -->
+            - frames/ <!-- TODO: -->
+            - graphs/ <!-- TODO: -->
+            - index.js
+            - indicators/ <!-- TODO: -->
+            - mixins/ <!-- TODO: -->
+            - pads/ <!-- TODO: -->
+            - scripts/ <!-- TODO: -->
+            - sliders/ <!-- TODO: -->
+            - utils.js
+            - vm.js
+    - launcher/
+        - index.js **FINISHED**
+        - main.js: **FINISHED**
+        - settings.js: **FINISHED**
+        - terminal.js: **FINISHED**
+        - toolbar.js: **FINISHED**
+    - server
+        - address.js: **FINISHED**
+        - auth.js: **FINISHED**
+        - callbacks.js: **FINISHED**
+        - custo:m**FINISHED**
+        - doc:s**FINISHED**
+        - electro:n**FINISHED**
+        - electro:n**FINISHED**
+        - fragmen:t**FINISHED**
+        - index.js: **FINISHED**
+        - ipc/
+            - client.js: **FINISHED**
+            - server.js: **FINISHED**
+        - midi.js: **FINISHED**
+        - options.js: **FINISHED**
+        - osc
+            - index.js: **FINISHED**
+            - osc.js: **IN PROGRESS** <!-- These three files need to import directly from the osc package instead of osc.js, -->
+            - tcp.js: **IN PROGRESS** <!-- as the latter simply imports/exports a couple things from it. -->
+            - udp.js: **IN PROGRESS** <!-- However, all other imports/exports have been finished. -->
+        - server.js: **FINISHED**
+        - settings.js: **FINISHED**
+        - ssl.js: **FINISHED**
+        - theme.js: **FINISHED**
+        - tray.js: **FINISHED**
+        - utils.js: **FINISHED**
+        - zeroconf.js: **FINISHED**
 
 ## 1.29.8
 
