@@ -111,5 +111,12 @@
     },
     "devDependencies": {
         "watchify": "4.0.0"
+    },
+    "prettier": {
+        "trailingComma": "none",
+        "tabWidth": 4,
+        "semi": true,
+        "singleQuote": false,
+        "useTabs": false
     }
 }
