@@ -56,7 +56,7 @@ class Ipc extends EventEmitter {
     }
 
     init() {
-        var callbacks = require("./callbacks");
+        var callbacks = require("./callbacks.js");
 
         for (let i in callbacks) {
             let callback = callbacks[i];

@@ -36,4 +36,5 @@ class Cache {
 }
 
 // module.exports = new Cache();
-export default new Cache();
+const cache = new Cache();
+export default cache;

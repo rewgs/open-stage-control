@@ -1,4 +1,6 @@
-var EventEmitter = require("../events/event-emitter.mjs");
+// var EventEmitter = require("../events/event-emitter.mjs");
+
+import EventEmitter from "../events/event-emitter.mjs";
 
 class UiWidget extends EventEmitter {
     constructor(options = {}) {
@@ -11,4 +13,5 @@ class UiWidget extends EventEmitter {
     }
 }
 
-module.exports = UiWidget;
+// module.exports = UiWidget;
+export default UiWidget;

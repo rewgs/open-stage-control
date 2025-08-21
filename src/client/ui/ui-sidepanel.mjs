@@ -1,5 +1,8 @@
-var UiWidget = require("./ui-widget"),
-    cache = require("../managers/cache.mjs");
+// var UiWidget = require("./ui-widget.mjs"),
+//     cache = require("../managers/cache.mjs");
+
+import UiWidget from "./ui-widget.mjs";
+import cache from "../managers/cache.mjs";
 
 class UiSidePanel extends UiWidget {
     constructor(options) {
@@ -154,4 +157,5 @@ class UiSidePanel extends UiWidget {
     }
 }
 
-module.exports = UiSidePanel;
+// module.exports = UiSidePanel;
+export default UiSidePanel;

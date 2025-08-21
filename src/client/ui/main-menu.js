@@ -6,7 +6,7 @@ var UiToolbar = require("./ui-toolbar"),
     editor = require("../editor"),
     sessionManager = require("../managers/session/index.mjs"),
     stateManager = require("../managers/state.mjs"),
-    { leftUiSidePanel, rightUiSidePanel } = require("../ui/"),
+    { leftUiSidePanel, rightUiSidePanel } = require("./index.mjs"),
     uiConsole = require("../ui/ui-console");
 
 var recentSessions = [

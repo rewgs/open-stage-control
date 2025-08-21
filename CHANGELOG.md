@@ -46,7 +46,7 @@
         - ui/
             - context-menu.js
             - fullscreen.js
-            - index.js
+            - index.js: **FINISHED**
             - init.js
             - ios.js
             - main-menu.js
@@ -63,10 +63,10 @@
             - ui-loading.js
             - ui-modal.js
             - ui-selectarea.js
-            - ui-sidepanel.js
+            - ui-sidepanel.js: **FINISHED**
             - ui-toolbar.js
             - ui-tree.js
-            - ui-widget.js
+            - ui-widget.js: **FINISHED**
             - ui-workspace.js
             - utils.js
             - zoom.js

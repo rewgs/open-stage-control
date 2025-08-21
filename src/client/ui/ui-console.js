@@ -1,4 +1,4 @@
-var UiSidePanel = require("./ui-sidepanel"),
+var UiSidePanel = require("./ui-sidepanel.mjs"),
     html = require("nanohtml"),
     raw = require("nanohtml/raw"),
     locales = require("../locales"),
