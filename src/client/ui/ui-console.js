@@ -1,7 +1,7 @@
 var UiSidePanel = require("./ui-sidepanel.mjs"),
     html = require("nanohtml"),
     raw = require("nanohtml/raw"),
-    locales = require("../locales"),
+    locales = require("../locales/index.mjs"),
     { icon } = require("./utils.mjs"),
     Script = require("../widgets/scripts/script"),
     Widget = require("../widgets/common/widget"),

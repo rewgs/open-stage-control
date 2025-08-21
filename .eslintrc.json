@@ -45,8 +45,8 @@
       }
     ],
     "linebreak-style": ["error", "unix"],
-    "quotes": ["error", "single", { "allowTemplateLiterals": true }],
-    "semi": ["error", "never"]
+    "quotes": ["error", "double", { "allowTemplateLiterals": true }],
+    "semi": ["error", "always"]
   },
   "globals": {
     "module": true

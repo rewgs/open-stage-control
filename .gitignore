@@ -12,3 +12,4 @@ app/docs/*
 !app/server/.keep
 app/package.json
 *.pyc
+.idea

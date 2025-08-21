@@ -14,8 +14,8 @@ if (localUuid) {
 }
 
 setTimeout(() => {
-    notifications = require("../ui/notifications");
-    locales = require("../locales");
+    notifications = require("../ui/notifications.mjs");
+    locales = require("../locales/index.mjs");
 });
 
 var reconnectTimeout = 500,

@@ -23,7 +23,7 @@ import uiLoading from "../../ui/ui-loading.js";
 import uiConsole from "../../ui/ui-console.js";
 import { saveAs } from "file-saver";
 import widgetManager from "../widgets.mjs";
-import locales from "../../locales/index.js";
+import locales from "../../locales/index.mjs";
 import Session from "./session.mjs";
 import EventEmitter from "../../events/event-emitter.mjs";
 import { deepEqual } from "../../utils.mjs";
@@ -321,4 +321,4 @@ var SessionManager = class SessionManager extends EventEmitter {
 
 // var sessionManager = new SessionManager();
 // module.exports = sessionManager;
-export default new SessionManager();
+export const sessionManager = new SessionManager();

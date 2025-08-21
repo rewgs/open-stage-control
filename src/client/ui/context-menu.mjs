@@ -1,9 +1,17 @@
-var html = require("nanohtml"),
-    raw = require("nanohtml/raw"),
-    keyboardJS = require("keyboardjs/dist/keyboard.min.js"),
-    UiWidget = require("./ui-widget.mjs"),
-    mod = (navigator.platform || "").match("Mac") ? "cmd" : "ctrl",
-    MENU_CONTAINER;
+// var html = require("nanohtml"),
+//     raw = require("nanohtml/raw"),
+//     keyboardJS = require("keyboardjs/dist/keyboard.min.js"),
+//     UiWidget = require("./ui-widget.mjs"),
+//     mod = (navigator.platform || "").match("Mac") ? "cmd" : "ctrl",
+//     MENU_CONTAINER;
+
+import nanohtml from "nanohtml";
+import raw from "nanohtml/raw";
+import { keyboardjs as keyboardJS } from "keyboardjs";
+import UiWidget from "./ui-widget.mjs";
+
+let mod = (navigator.platform || "").match("Mac") ? "cmd" : "ctrl";
+let MENU_CONTAINER;
 
 class ContextMenu extends UiWidget {
     constructor(options = {}) {
@@ -207,4 +215,5 @@ class ContextMenu extends UiWidget {
     }
 }
 
-module.exports = ContextMenu;
+// module.exports = ContextMenu;
+export default ContextMenu;

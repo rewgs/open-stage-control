@@ -1,11 +1,22 @@
-var UiWidget = require("./ui-widget"),
-    { icon } = require("./utils.mjs"),
-    locales = require("../locales"),
-    layout = locales("keyboard_layout"),
-    html = require("nanohtml"),
-    raw = require("nanohtml/raw"),
-    morph = require("nanomorph"),
-    doubleClick = require("../events/double-click");
+// var UiWidget = require("./ui-widget");
+// var { icon } = require("./utils.mjs");
+// var locales = require("../locales");
+// var layout = locales("keyboard_layout");
+var html = require("nanohtml");
+var raw = require("nanohtml/raw");
+var morph = require("nanomorph");
+var doubleClick = require("../events/double-click");
+
+import { nanohtml as html } from "nanohtml";
+import raw from "nanohtml/raw";
+import morph from "nanomorph/lib/morph";
+
+import UiWidget from "./ui-widget.mjs";
+import { icon } from "./utils.mjs";
+import locales from "../locales/index.mjs";
+import doubleClick from "../events/double-click.mjs";
+
+const layout = locales("keyboard_layout");
 
 const numericLayout = [
     "{sep} + 7 8 9",
@@ -517,4 +528,7 @@ class OscKeybard extends UiWidget {
     }
 }
 
-module.exports = new OscKeybard({ element: DOM.get("osc-keyboard")[0] });
+// module.exports = new OscKeybard({ element: DOM.get("osc-keyboard")[0] });
+export const oscKeyboard = new OscKeybard({
+    element: DOM.get("osc-keyboard")[0]
+});

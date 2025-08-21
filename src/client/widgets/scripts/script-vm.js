@@ -433,7 +433,7 @@ class ScriptVm extends Vm {
 
             if (!options.send) return;
 
-            toolbar = toolbar || require("../../ui/main-menu");
+            toolbar = toolbar || require("../../ui/main-menu.mjs");
 
             var action = toolbar.entries.filter((x) => !x.separator);
 

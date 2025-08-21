@@ -27,11 +27,11 @@
             - callbacks.js
             - index.js
         - locales/
-            - de.js
-            - en.js
-            - fr.js
-            - index.js
-            - pl.js
+            - de.js: **FINISHED**
+            - en.js: **FINISHED**
+            - fr.js: **FINISHED**
+            - index.js: **FINISHED**
+            - pl.js: **FINISHED**
         - managers/
             - cache.js: **FINISHED**
             - session/
@@ -44,12 +44,12 @@
         - remote-control.js: **FINISHED**
         - stacktrace.js: **FINISHED**
         - ui/
-            - context-menu.js
-            - fullscreen.js
+            - context-menu.js: **FINISHED**
+            - fullscreen.js: **FINISHED**
             - index.js: **FINISHED**
             - init.js: **_IN PROGRESS_**
             - ios.js: **FINISHED**
-            - main-menu.js
+            - main-menu.js: **FINISHED**
             - notifications.js: **FINISHED**
             - ui-code-editor.js
             - ui-colorpicker.js
@@ -59,12 +59,12 @@
             - ui-fileupload.js
             - ui-inspector-field.js
             - ui-inspector.js
-            - ui-keyboard.js
+            - ui-keyboard.js: **FINISHED**
             - ui-loading.js
             - ui-modal.js
             - ui-selectarea.js
             - ui-sidepanel.js: **FINISHED**
-            - ui-toolbar.js
+            - ui-toolbar.js: **FINISHED**
             - ui-tree.js
             - ui-widget.js: **FINISHED**
             - ui-workspace.js: **FINISHED**

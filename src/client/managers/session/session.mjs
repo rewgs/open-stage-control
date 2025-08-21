@@ -4,7 +4,7 @@
 
 import "semver";
 import UiModal from "../../ui/ui-modal";
-import "../../locales";
+import "../../locales/index.mjs";
 
 class Session {
     constructor(data, type) {

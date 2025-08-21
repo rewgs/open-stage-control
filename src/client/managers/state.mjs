@@ -13,9 +13,9 @@ import widgetManager from "./widgets.mjs";
 import cache from "./cache.mjs";
 import uiFilebrowser from "../ui/ui-filebrowser";
 import uiFileupload from "../ui/ui-fileupload";
-import notifications from "../ui/notifications";
+import notifications from "../ui/notifications.mjs";
 import { saveAs } from "file-saver";
-import locales from "../locales";
+import locales from "../locales/index.mjs";
 import { deepCopy } from "../utils.mjs";
 
 var StateManager = class StateManager {
@@ -253,4 +253,4 @@ var StateManager = class StateManager {
 
 // var stateManager = new StateManager();
 // module.exports = stateManager;
-export default new StateManager();
+export const stateManager = new StateManager();

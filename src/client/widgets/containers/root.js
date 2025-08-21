@@ -65,7 +65,7 @@ class Root extends StaticProperties(Panel, {
     }
 
     checkMenuVisibility() {
-        mainMenu = mainMenu || require("../../ui/main-menu");
+        mainMenu = mainMenu || require("../../ui/main-menu.mjs");
 
         if (this.getProp("hideMenu")) {
             mainMenu.container.style.display = "none";

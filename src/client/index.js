@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     require("./globals");
     require("./stacktrace");
 
-    var locales = require("./locales");
+    var locales = require("./locales/index.mjs");
 
     DOM.init();
 

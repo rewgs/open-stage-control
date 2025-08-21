@@ -28,7 +28,7 @@ import UiInspector from "../ui/ui-inspector.js";
 import UiTree from "../ui/ui-tree.js";
 import UiDragResize from "../ui/ui-dragresize.js";
 import notifications from "../ui/notifications";
-import locales from "../locales";
+import locales from "../locales/index.mjs";
 import { leftUiSidePanel, rightUiSidePanel } from "../ui/";
 import ipc from "../ipc";
 import sessionManager from "../managers/session/index.mjs";
@@ -805,14 +805,14 @@ class Editor {
     }
 
     mouseMove(e) {
-        (this.mousePosition.x =
+        ((this.mousePosition.x =
             Math.round(
                 (e.offsetX + e.target.scrollLeft) / (GRIDWIDTH * PXSCALE)
             ) * GRIDWIDTH),
             (this.mousePosition.y =
                 Math.round(
                     (e.offsetY + e.target.scrollTop) / (GRIDWIDTH * PXSCALE)
-                ) * GRIDWIDTH);
+                ) * GRIDWIDTH));
     }
 
     mouseLeave(e) {
@@ -1355,4 +1355,4 @@ class Editor {
 // module.exports = editor;
 // require("./context-menu.mjs");
 
-export default new Editor();
+export const editor = new Editor();

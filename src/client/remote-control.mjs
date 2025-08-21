@@ -12,7 +12,7 @@ import editor from "./editor";
 import widgetManager from "./managers/widgets.mjs";
 import sessionManager from "./managers/session/index.mjs";
 import deepExtend from "deep-extend";
-import notifications from "./ui/notifications";
+import notifications from "./ui/notifications.mjs";
 import uiConsole from "./ui/ui-console";
 
 var callbacks = {

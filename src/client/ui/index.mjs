@@ -2,7 +2,7 @@
 //     locales = require("../locales");
 
 import UiSidePanel from "./ui-sidepanel.mjs";
-import locales from "../locales";
+import locales from "../locales/index.mjs";
 
 // module.exports = {
 //     leftUiSidePanel: new UiSidePanel({

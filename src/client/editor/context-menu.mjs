@@ -13,8 +13,8 @@ import { categories } from "../widgets";
 import widgetManager from "../managers/widgets.mjs";
 import { icon } from "../ui/utils";
 import editor from ".";
-import locales from "../locales";
-import ContextMenu from "../ui/context-menu";
+import locales from "../locales/index.mjs";
+import ContextMenu from "../ui/context-menu.mjs";
 import { sessionManager as _sessionManager } from "../managers/session/index.mjs";
 
 let contextMenu = new ContextMenu();

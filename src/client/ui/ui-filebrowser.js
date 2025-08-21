@@ -1,4 +1,4 @@
-var locales = require("../locales"),
+var locales = require("../locales/index.mjs"),
     html = require("nanohtml"),
     raw = require("nanohtml/raw"),
     ipc = require("../ipc"),

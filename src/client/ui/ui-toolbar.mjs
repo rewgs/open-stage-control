@@ -1,5 +1,8 @@
-var UiWidget = require("./ui-widget.mjs"),
-    ContextMenu = require("./context-menu");
+// var UiWidget = require("./ui-widget.mjs");
+// var ContextMenu = require("./context-menu.mjs");
+
+import UiWidget from "./ui-widget.mjs";
+import ContextMenu from "./context-menu.mjs";
 
 class UiToolbar extends UiWidget {
     constructor(options) {
@@ -48,4 +51,5 @@ class UiToolbar extends UiWidget {
     }
 }
 
-module.exports = UiToolbar;
+// module.exports = UiToolbar;
+export default UiToolbar;

@@ -1,13 +1,24 @@
-var UiToolbar = require("./ui-toolbar"),
-    ipc = require("../ipc"),
-    locales = require("../locales"),
-    notifications = require("./notifications"),
-    fullscreen = require("./fullscreen"),
-    editor = require("../editor"),
-    sessionManager = require("../managers/session/index.mjs"),
-    stateManager = require("../managers/state.mjs"),
-    { leftUiSidePanel, rightUiSidePanel } = require("./index.mjs"),
-    uiConsole = require("../ui/ui-console");
+// var UiToolbar = require("./ui-toolbar.mjs");
+// var ipc = require("../ipc");
+// var locales = require("../locales");
+// var notifications = require("./notifications.mjs");
+// var fullscreen = require("./fullscreen.mjs");
+// var editor = require("../editor");
+// var sessionManager = require("../managers/session/index.mjs");
+// var stateManager = require("../managers/state.mjs");
+// var { leftUiSidePanel, rightUiSidePanel } = require("./index.mjs");
+// var uiConsole = require("../ui/ui-console");
+
+import ipc from "../ipc";
+import locales from "../locales/index.mjs";
+import { notifications } from "./notifications.mjs";
+import { getFullscreen } from "./fullscreen.mjs";
+import { editor } from "../editor/index.mjs";
+import { sessionManager } from "../managers/session/index.mjs";
+import { stateManager } from "../managers/state.mjs";
+import { leftUiSidePanel, rightUiSidePanel } from "./index.mjs";
+import uiConsole from "./ui-console";
+import UiToolbar from "./ui-toolbar.mjs";
 
 var recentSessions = [
     { label: locales("file_open_recent_wait"), class: "disabled" }
@@ -264,10 +275,10 @@ var menuEntries = [
         label: locales("fullscreen"),
         disabled: KIOSK && navigator.userAgent.match(/OpenStageControl/), // built-in electron client only
         class: () => {
-            return "toggle " + (fullscreen.isFullscreen ? "on" : "off");
+            return "toggle " + (getFullscreen.isFullscreen ? "on" : "off");
         },
         action: () => {
-            if (fullscreen.isEnabled) fullscreen.toggle();
+            if (getFullscreen.isEnabled) getFullscreen.toggle();
         },
         shortcut: "f11"
     },
@@ -354,7 +365,13 @@ class MainMenu extends UiToolbar {
     }
 }
 
-module.exports = new MainMenu({
+// module.exports = new MainMenu({
+//     selector: "#main-menu",
+//     position: [40, 1],
+//     entries: menuEntries
+// });
+
+export const mainMenu = new MainMenu({
     selector: "#main-menu",
     position: [40, 1],
     entries: menuEntries
