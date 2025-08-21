@@ -1,6 +1,6 @@
 // const zoom = require("../ui/zoom");
 
-import zoom from "../ui/zoom";
+import zoom from "../ui/zoom.mjs";
 
 const Touch = window.Touch || class Touch {};
 

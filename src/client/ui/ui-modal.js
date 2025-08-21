@@ -1,5 +1,5 @@
 var UiWidget = require("./ui-widget.mjs"),
-    { icon } = require("./utils"),
+    { icon } = require("./utils.mjs"),
     html = require("nanohtml"),
     raw = require("nanohtml/raw"),
     MODAL_SINGLETON = null,

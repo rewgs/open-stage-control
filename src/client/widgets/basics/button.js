@@ -2,7 +2,7 @@ var Widget = require("../common/widget"),
     doubleTap = require("../mixins/double_tap"),
     html = require("nanohtml"),
     { deepEqual, isJSON } = require("../../utils"),
-    { iconify } = require("../../ui/utils"),
+    { iconify } = require("../../ui/utils.mjs"),
     parser = require("../../parser.mjs");
 
 class Button extends Widget {

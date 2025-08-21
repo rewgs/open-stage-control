@@ -1,4 +1,5 @@
 // var EventEmitter = require("../events/event-emitter");
+import EventEmitter from "../events/event-emitter.mjs";
 
 var mod = (navigator.platform || "").match("Mac") ? "metaKey" : "ctrlKey";
 
@@ -101,4 +102,5 @@ class Zoom extends EventEmitter {
     }
 }
 
-module.exports = new Zoom();
+// module.exports = new Zoom();
+export const zoom = new Zoom();

@@ -10,7 +10,7 @@ import {
     resetEventOffset,
     TRAVERSING_SAMEWIDGET
 } from "./utils.mjs";
-import iOS from "../ui/ios";
+import iOS from "../ui/ios.mjs";
 
 let targets = {};
 let previousPointers = {};

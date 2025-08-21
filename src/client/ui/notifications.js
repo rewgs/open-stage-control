@@ -1,6 +1,10 @@
-var html = require("nanohtml"),
-    morph = require("nanomorph"),
-    UiWidget = require("./ui-widget.mjs");
+// var html = require("nanohtml"),
+//     morph = require("nanomorph"),
+//     UiWidget = require("./ui-widget.mjs");
+
+import { nanohtml as html } from "nanohtml";
+import nanomorph from "nanomorph";
+import UiWidget from "./ui-widget.mjs";
 
 var DEFAULT_DURATION = 3500;
 
@@ -112,4 +116,5 @@ class Notifications extends UiWidget {
     }
 }
 
-module.exports = new Notifications({ selector: "#notifications" });
+// module.exports = new Notifications({ selector: "#notifications" });
+export const notifications = new Notifications({ selector: "#notifications" });

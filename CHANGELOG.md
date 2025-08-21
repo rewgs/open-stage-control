@@ -47,10 +47,10 @@
             - context-menu.js
             - fullscreen.js
             - index.js: **FINISHED**
-            - init.js
-            - ios.js
+            - init.js: **_IN PROGRESS_**
+            - ios.js: **FINISHED**
             - main-menu.js
-            - notifications.js
+            - notifications.js: **FINISHED**
             - ui-code-editor.js
             - ui-colorpicker.js
             - ui-console.js
@@ -67,9 +67,9 @@
             - ui-toolbar.js
             - ui-tree.js
             - ui-widget.js: **FINISHED**
-            - ui-workspace.js
-            - utils.js
-            - zoom.js
+            - ui-workspace.js: **FINISHED**
+            - utils.js: **FINISHED**
+            - zoom.js: **FINISHED**
         - utils.js: **FINISHED**
         - widgets/
             - basics/ <!-- TODO: -->

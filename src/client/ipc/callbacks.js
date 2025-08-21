@@ -1,4 +1,4 @@
-var utils = require("../ui/utils"),
+var utils = require("../ui/utils.mjs"),
     osc = require("../osc"),
     session = require("../managers/session/index.mjs"),
     widgetManager = require("../managers/widgets.mjs"),
@@ -10,7 +10,7 @@ var utils = require("../ui/utils"),
     notifications = require("../ui/notifications"),
     raw = require("nanohtml/raw"),
     backup = require("../backup"),
-    { updateMobileThemeColor } = require("../ui/utils");
+    { updateMobileThemeColor } = require("../ui/utils.mjs");
 
 module.exports = {
     bundle: function (data) {
