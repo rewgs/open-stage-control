@@ -23,8 +23,9 @@ import Matrix from "../widgets/containers/matrix";
 // });
 
 let scrollState = {};
+var fakeStore = {};
 
-function updateWidget(widget, options = {}) {
+export function updateWidget(widget, options = {}) {
     if (options.changedProps) {
         // alternate routine for small edits
         var propNames = options.changedProps;
@@ -181,9 +182,7 @@ function updateWidget(widget, options = {}) {
     return newWidget;
 }
 
-var fakeStore = {};
-
-var incrementWidget = function (data, root) {
+export function incrementWidget(data, root) {
     if (!data) return;
 
     if (root !== false) {
@@ -267,9 +266,9 @@ var incrementWidget = function (data, root) {
     }
 
     return data;
-};
+}
 
-module.exports = {
-    updateWidget: updateWidget,
-    incrementWidget: incrementWidget
-};
+// module.exports = {
+//     updateWidget: updateWidget,
+//     incrementWidget: incrementWidget
+// };

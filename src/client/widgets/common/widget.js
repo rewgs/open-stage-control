@@ -1,23 +1,51 @@
-var EventEmitter = require("../../events/event-emitter.mjs"),
-    osc = require("../../osc"),
-    { nanoid } = require("nanoid"),
-    widgetManager = require("../../managers/widgets.mjs"),
-    { urlParser, balancedReplace } = require("../utils"),
-    Vm = require("../vm"),
-    vm = new Vm(),
-    scopeCss = require("scope-css"),
-    resize = require("../../events/resize"),
-    OscReceiver = require("./osc-receiver"),
-    { deepCopy, deepEqual, isJSON } = require("../../utils"),
-    html = require("nanohtml"),
-    morph = require("nanomorph"),
-    sanitizeHtml = require("sanitize-html"),
-    updateWidget = () => {},
-    Script = require("../scripts/script"),
-    uiConsole,
-    uiTree,
-    uiDragResize,
-    sessionManager;
+// var EventEmitter = require("../../events/event-emitter.mjs");
+// var osc = require("../../osc");
+// var { nanoid } = require("nanoid");
+// var widgetManager = require("../../managers/widgets.mjs");
+// var { urlParser, balancedReplace } = require("../utils");
+// var Vm = require("../vm");
+// var vm = new Vm();
+// var scopeCss = require("scope-css");
+// var resize = require("../../events/resize");
+// var OscReceiver = require("./osc-receiver");
+// var { deepCopy, deepEqual, isJSON } = require("../../utils");
+// var html = require("nanohtml");
+// var morph = require("nanomorph");
+// var sanitizeHtml = require("sanitize-html");
+// var updateWidget = () => {};
+// var Script = require("../scripts/script");
+// var uiConsole;
+// var uiTree;
+// var uiDragResize;
+// var sessionManager;
+// var updateWidget = require("../../editor/data-workers.mjs").updateWidget;
+// var uiConsole = require("../../ui/ui-console.mjs");
+// var uiTree = require("../../editor").widgetTree;
+// var uiDragResize = require("../../editor").widgetDragResize;
+// var sessionManager = require("../../managers/session/index.mjs");
+
+import EventEmitter from "../../events/event-emitter.mjs";
+import osc from "../../osc";
+import { nanoid } from "nanoid";
+import { widgetManager } from "../../managers/widgets.mjs";
+import { urlParser, balancedReplace } from "../utils.mjs";
+import Vm from "../vm.mjs";
+import "scope-css";
+import "../../events/resize.mjs";
+import OscReceiver from "./osc-receiver";
+import { deepCopy, deepEqual, isJSON } from "../../utils.mjs";
+import { nanohtml as html } from "nanohtml";
+import morph from "nanomorph/lib/morph";
+import sanitize from "sanitize-html";
+import Script from "../scripts/script";
+import { uiConsole } from "../../ui/ui-console.mjs";
+import UiTree from "../../ui/ui-tree.mjs";
+import UiDragResize from "../../ui/ui-dragresize.mjs";
+import { sessionManager } from "../../managers/session/index.mjs";
+import { updateWidget } from "../../editor/data-workers.mjs";
+
+let vm = new Vm();
+let updateWidget = () => {};
 
 var oscReceiverState = {};
 
@@ -30,13 +58,13 @@ var OSCProps = [
     "bypass"
 ];
 
-setTimeout(() => {
-    updateWidget = require("../../editor/data-workers.mjs").updateWidget;
-    uiConsole = require("../../ui/ui-console.mjs");
-    uiTree = require("../../editor").widgetTree;
-    uiDragResize = require("../../editor").widgetDragResize;
-    sessionManager = require("../../managers/session/index.mjs");
-});
+// setTimeout(() => {
+//     updateWidget = require("../../editor/data-workers.mjs").updateWidget;
+//     uiConsole = require("../../ui/ui-console.mjs");
+//     uiTree = require("../../editor").widgetTree;
+//     uiDragResize = require("../../editor").widgetDragResize;
+//     sessionManager = require("../../managers/session/index.mjs");
+// });
 
 class Widget extends EventEmitter {
     static description() {
@@ -1583,7 +1611,7 @@ class Widget extends EventEmitter {
     updateHtml() {
         var extraHtml =
             this.getProp("html") !== ""
-                ? sanitizeHtml(this.getProp("html"), Widget.sanitizeHtmlOptions)
+                ? sanitize(this.getProp("html"), Widget.sanitizeHtmlOptions)
                 : null;
 
         if (this.extraHtml) {
@@ -1641,7 +1669,7 @@ class Widget extends EventEmitter {
 }
 
 Widget.sanitizeHtmlOptions = {
-    allowedTags: sanitizeHtml.defaults.allowedTags
+    allowedTags: sanitize.defaults.allowedTags
         .concat(["img", "h1", "h2"])
         .filter((x) => x !== "iframe"),
     allowedAttributes: {
@@ -1650,7 +1678,7 @@ Widget.sanitizeHtmlOptions = {
         a: ["href", "target"]
     },
     transformTags: {
-        a: sanitizeHtml.simpleTransform("a", { target: "_blank" })
+        a: sanitize.simpleTransform("a", { target: "_blank" })
     }
 };
 
@@ -1733,4 +1761,5 @@ Widget.dynamicProps = [
     "bypass"
 ];
 
-module.exports = Widget;
+// module.exports = Widget;
+export default Widget;

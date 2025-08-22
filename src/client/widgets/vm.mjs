@@ -1,6 +1,11 @@
-var loopProtect = require("loop-protect"),
-    { deepCopy } = require("../utils"),
-    globals;
+// var loopProtect = require("loop-protect"),
+//     { deepCopy } = require("../utils"),
+//     globals;
+
+import "loop-protect";
+import { deepCopy } from "../utils.mjs";
+
+let globals;
 
 class Vm {
     constructor() {
@@ -180,4 +185,5 @@ class Vm {
     }
 }
 
-module.exports = Vm;
+// module.exports = Vm;
+export default Vm;

@@ -90,7 +90,7 @@
                 - container.js
                 - osc-receiver.js
                 - queue.js
-                - widget.js
+                - widget.js: **FINISHED**
             - containers/
                 - clone.js
                 - folder.js
@@ -137,8 +137,8 @@
                 - range.js
                 - slider.js
             - index.js
-            - utils.js
-            - vm.js
+            - utils.js: **FINISHED**
+            - vm.js: **FINISHED**
     - launcher/
         - index.js **FINISHED**
         - main.js: **FINISHED**
