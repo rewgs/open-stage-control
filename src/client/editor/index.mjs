@@ -26,7 +26,7 @@ import { diff } from "jsondiffpatch";
 import UiSelectArea from "../ui/ui-selectarea.js";
 import UiInspector from "../ui/ui-inspector.js";
 import UiTree from "../ui/ui-tree.js";
-import UiDragResize from "../ui/ui-dragresize.js";
+import UiDragResize from "../ui/ui-dragresize.mjs";
 import notifications from "../ui/notifications";
 import locales from "../locales/index.mjs";
 import { leftUiSidePanel, rightUiSidePanel } from "../ui/";

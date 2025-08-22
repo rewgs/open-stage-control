@@ -13,7 +13,7 @@ import widgetManager from "./managers/widgets.mjs";
 import sessionManager from "./managers/session/index.mjs";
 import deepExtend from "deep-extend";
 import notifications from "./ui/notifications.mjs";
-import uiConsole from "./ui/ui-console";
+import uiConsole from "./ui/ui-console.mjs";
 
 var callbacks = {
     "/EDIT": function (args, custom_module) {

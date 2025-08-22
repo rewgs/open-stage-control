@@ -12,7 +12,7 @@ import ipc from "../ipc/index.mjs";
 import widgetManager from "./widgets.mjs";
 import cache from "./cache.mjs";
 import uiFilebrowser from "../ui/ui-filebrowser.mjs";
-import uiFileupload from "../ui/ui-fileupload";
+import uiFileupload from "../ui/ui-fileupload.mjs";
 import notifications from "../ui/notifications.mjs";
 import { saveAs } from "file-saver";
 import locales from "../locales/index.mjs";

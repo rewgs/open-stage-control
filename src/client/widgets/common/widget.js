@@ -32,7 +32,7 @@ var OSCProps = [
 
 setTimeout(() => {
     updateWidget = require("../../editor/data-workers.mjs").updateWidget;
-    uiConsole = require("../../ui/ui-console");
+    uiConsole = require("../../ui/ui-console.mjs");
     uiTree = require("../../editor").widgetTree;
     uiDragResize = require("../../editor").widgetDragResize;
     sessionManager = require("../../managers/session/index.mjs");

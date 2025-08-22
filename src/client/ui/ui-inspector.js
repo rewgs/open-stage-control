@@ -1,20 +1,23 @@
-var UiWidget = require("./ui-widget"),
-    UiInspectorField = require("./ui-inspector-field"),
-    UiColorPicker = require("./ui-colorpicker"),
-    UiModal = require("./ui-modal.mjs"),
-    morph = require("nanomorph"),
-    { defaults } = require("../widgets/"),
-    html = require("nanohtml"),
-    raw = require("nanohtml/raw"),
-    fastdom = require("fastdom"),
-    { icon } = require("./utils"),
-    zoom = require("./zoom"),
-    locales = require("../locales/index.mjs"),
-    getCodeEditor = require("./ui-code-editor.mjs"),
-    codeEditorModKey = (navigator.platform || "").match("Mac")
+// var UiWidget = require("./ui-widget");
+// var UiInspectorField = require("./ui-inspector-field.mjs");
+var UiColorPicker = require("./ui-colorpicker.mjs");
+var UiModal = require("./ui-modal.mjs");
+var morph = require("nanomorph");
+var { defaults } = require("../widgets/");
+var html = require("nanohtml");
+var raw = require("nanohtml/raw");
+var fastdom = require("fastdom");
+var { icon } = require("./utils");
+var zoom = require("./zoom");
+var locales = require("../locales/index.mjs");
+var getCodeEditor = require("./ui-code-editor.mjs");
+var codeEditorModKey = (navigator.platform || "").match("Mac")
         ? "metaKey"
         : "ctrlKey",
     editor;
+
+import UiWidget from "./ui-widget.mjs";
+import UiInspectorField from "./ui-inspector-field.mjs";
 
 class UiInspector extends UiWidget {
     constructor(options) {
@@ -505,4 +508,5 @@ class UiInspector extends UiWidget {
     }
 }
 
-module.exports = UiInspector;
+// module.exports = UiInspector;
+export default UiInspector;

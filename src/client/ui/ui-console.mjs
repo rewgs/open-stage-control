@@ -1,11 +1,20 @@
-var UiSidePanel = require("./ui-sidepanel.mjs"),
-    html = require("nanohtml"),
-    raw = require("nanohtml/raw"),
-    locales = require("../locales/index.mjs"),
-    { icon } = require("./utils.mjs"),
-    Script = require("../widgets/scripts/script"),
-    Widget = require("../widgets/common/widget"),
-    widgetManager = require("../managers/widgets.mjs");
+// var UiSidePanel = require("./ui-sidepanel.mjs"),
+//     html = require("nanohtml"),
+//     raw = require("nanohtml/raw"),
+//     locales = require("../locales/index.mjs"),
+//     { icon } = require("./utils.mjs"),
+//     Script = require("../widgets/scripts/script"),
+//     Widget = require("../widgets/common/widget"),
+//     widgetManager = require("../managers/widgets.mjs");
+
+import UiSidePanel from "./ui-sidepanel.mjs";
+import { nanohtml as html } from "nanohtml";
+import raw from "nanohtml/raw";
+import locales from "../locales/index.mjs";
+import { icon } from "./utils.mjs";
+import Script from "../widgets/scripts/script";
+import Widget from "../widgets/common/widget";
+import { widgetManager } from "../managers/widgets.mjs";
 
 class UiConsole extends UiSidePanel {
     constructor(options) {
@@ -198,7 +207,13 @@ class UiConsole extends UiSidePanel {
     }
 }
 
-module.exports = new UiConsole({
+// module.exports = new UiConsole({
+//     selector: "#osc-console",
+//     minSize: 40,
+//     size: 200,
+//     minimized: true
+// });
+export const uiConsole = new UiConsole({
     selector: "#osc-console",
     minSize: 40,
     size: 200,

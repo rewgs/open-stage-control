@@ -17,7 +17,7 @@ import { editor } from "../editor/index.mjs";
 import { sessionManager } from "../managers/session/index.mjs";
 import { stateManager } from "../managers/state.mjs";
 import { leftUiSidePanel, rightUiSidePanel } from "./index.mjs";
-import uiConsole from "./ui-console";
+import uiConsole from "./ui-console.mjs";
 import UiToolbar from "./ui-toolbar.mjs";
 
 var recentSessions = [

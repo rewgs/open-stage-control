@@ -55,14 +55,14 @@
             - ios.js: **FINISHED**
             - main-menu.js: **FINISHED**
             - notifications.js: **FINISHED**
-            - ui-code-editor.js
-            - ui-colorpicker.js: **_IN PROGRESS_** -- `ace-builds` imports for `editorModes` is weird, need to dig into it more.
-            - ui-console.js
-            - ui-dragresize.js
+            - ui-code-editor.js: **_IN PROGRESS_** -- `ace-builds` imports for `editorModes` is weird, need to dig into it more.
+            - ui-colorpicker.js: **_IN PROGRESS_**
+            - ui-console.js: **FINISHED**
+            - ui-dragresize.js: **FINISHED**
             - ui-filebrowser.js: **FINISHED**
-            - ui-fileupload.js
-            - ui-inspector-field.js
-            - ui-inspector.js
+            - ui-fileupload.js: **FINISHED**
+            - ui-inspector-field.js: **FINISHED**
+            - ui-inspector.js: **_IN PROGRESS_**
             - ui-keyboard.js: **FINISHED**
             - ui-loading.js
             - ui-modal.js: **FINISHED**
