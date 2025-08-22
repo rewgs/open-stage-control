@@ -1,7 +1,7 @@
 var UiWidget = require("./ui-widget"),
     UiInspectorField = require("./ui-inspector-field"),
     UiColorPicker = require("./ui-colorpicker"),
-    UiModal = require("./ui-modal"),
+    UiModal = require("./ui-modal.mjs"),
     morph = require("nanomorph"),
     { defaults } = require("../widgets/"),
     html = require("nanohtml"),
@@ -10,7 +10,7 @@ var UiWidget = require("./ui-widget"),
     { icon } = require("./utils"),
     zoom = require("./zoom"),
     locales = require("../locales/index.mjs"),
-    getCodeEditor = require("./ui-code-editor"),
+    getCodeEditor = require("./ui-code-editor.mjs"),
     codeEditorModKey = (navigator.platform || "").match("Mac")
         ? "metaKey"
         : "ctrlKey",

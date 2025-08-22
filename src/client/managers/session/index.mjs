@@ -16,9 +16,9 @@
 import "../../ipc/index.mjs";
 import "../../parser.mjs";
 import "../../editor/index.js";
-import uiFilebrowser from "../../ui/ui-filebrowser.js";
+import uiFilebrowser from "../../ui/ui-filebrowser.mjs";
 import uiFileupload from "../../ui/ui-fileupload.js";
-import UiModal from "../../ui/ui-modal.js";
+import UiModal from "../../ui/ui-modal.mjs";
 import uiLoading from "../../ui/ui-loading.js";
 import uiConsole from "../../ui/ui-console.js";
 import { saveAs } from "file-saver";

@@ -5,7 +5,7 @@ var widgetManager = require("../../managers/widgets.mjs"),
     { urlParser } = require("../utils"),
     Vm = require("../vm"),
     ipc = require("../../ipc/index.mjs"),
-    uiFilebrowser = require("../../ui/ui-filebrowser"),
+    uiFilebrowser = require("../../ui/ui-filebrowser.mjs"),
     toolbar;
 
 class ScriptVm extends Vm {

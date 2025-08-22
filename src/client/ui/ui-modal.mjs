@@ -1,9 +1,17 @@
-var UiWidget = require("./ui-widget.mjs"),
-    { icon } = require("./utils.mjs"),
-    html = require("nanohtml"),
-    raw = require("nanohtml/raw"),
-    MODAL_SINGLETON = null,
-    MODAL_CONTAINER = null;
+// var UiWidget = require("./ui-widget.mjs"),
+//     { icon } = require("./utils.mjs"),
+//     html = require("nanohtml"),
+//     raw = require("nanohtml/raw"),
+//     MODAL_SINGLETON = null,
+//     MODAL_CONTAINER = null;
+
+import UiWidget from "./ui-widget.mjs";
+import { icon } from "./utils.mjs";
+import { nanohtml as html } from "nanohtml";
+import raw from "nanohtml/raw";
+
+let MODAL_SINGLETON = null;
+let MODAL_CONTAINER = null;
 
 class UiModal extends UiWidget {
     constructor(options) {
@@ -112,4 +120,5 @@ class UiModal extends UiWidget {
     }
 }
 
-module.exports = UiModal;
+// module.exports = UiModal;
+export default UiModal;

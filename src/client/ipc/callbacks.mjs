@@ -19,7 +19,7 @@ import { widgetManager } from "../managers/widgets.mjs";
 import { stateManager as state } from "../managers/state.mjs";
 import { editor } from "../editor/index.mjs";
 import locales from "../locales/index.mjs";
-import UiModal from "../ui/ui-modal";
+import UiModal from "../ui/ui-modal.mjs";
 import uiLoading from "../ui/ui-loading";
 import { notifications } from "../ui/notifications.mjs";
 import raw from "nanohtml/raw";

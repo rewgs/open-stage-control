@@ -1,19 +1,32 @@
-var UiModal = require("./ui-modal"),
-    locales = require("../locales/index.mjs"),
-    html = require("nanohtml"),
-    raw = require("nanohtml/raw"),
-    { icon } = require("../ui/utils"),
-    ace = require("ace-builds/src/ace.js"),
-    scriptGlobals = require("../widgets/scripts/script-vm").globals,
-    editors = {},
-    editorModes = {
-        javascript: require("ace-builds/src/mode-javascript.js"),
-        css: require("ace-builds/src/mode-css.js"),
-        html: require("ace-builds/src/mode-html.js")
-    },
-    codeEditorModKey = (navigator.platform || "").match("Mac") ? "Cmd" : "Ctrl";
+// var UiModal = require("./ui-modal.mjs");
+// var locales = require("../locales/index.mjs");
+// var html = require("nanohtml");
+// var raw = require("nanohtml/raw");
+// var { icon } = require("../ui/utils");
+// var ace = require("ace-builds/src/ace.js");
+// var scriptGlobals = require("../widgets/scripts/script-vm").globals;
+// var editors = {};
+var editorModes = {
+    javascript: require("ace-builds/src/mode-javascript.js"),
+    css: require("ace-builds/src/mode-css.js"),
+    html: require("ace-builds/src/mode-html.js")
+};
+// var codeEditorModKey = (navigator.platform || "").match("Mac") ? "Cmd" : "Ctrl";
 
+import UiModal from "./ui-modal.mjs";
+import locales from "../locales/index.mjs";
+import { nanohtml as html } from "nanohtml";
+import raw from "nanohtml/raw";
+import { icon } from "./utils.mjs";
+import { Ace } from "ace-builds";
+import { globals as scriptGlobals } from "../widgets/scripts/script-vm";
+
+let ace = new Ace();
 ace.config.set("basePath", "/client/workers/");
+
+let editors = {};
+
+let codeEditorModKey = (navigator.platform || "").match("Mac") ? "Cmd" : "Ctrl";
 
 function setCommandEnabled(editor, name, enabled) {
     var command = editor.commands.byName[name];
@@ -360,7 +373,12 @@ class CodeEditor {
     }
 }
 
-module.exports = function (parent, name, language, syntaxChecker) {
+// module.exports = function (parent, name, language, syntaxChecker) {
+//     if (!editors[name])
+//         editors[name] = new CodeEditor(parent, name, language, syntaxChecker);
+//     return editors[name];
+// };
+export function = (parent, name, language, syntaxChecker) => {
     if (!editors[name])
         editors[name] = new CodeEditor(parent, name, language, syntaxChecker);
     return editors[name];

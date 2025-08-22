@@ -52,16 +52,16 @@
             - main-menu.js: **FINISHED**
             - notifications.js: **FINISHED**
             - ui-code-editor.js
-            - ui-colorpicker.js
+            - ui-colorpicker.js: **_IN PROGRESS_** -- `ace-builds` imports for `editorModes` is weird, need to dig into it more.
             - ui-console.js
             - ui-dragresize.js
-            - ui-filebrowser.js
+            - ui-filebrowser.js: **FINISHED**
             - ui-fileupload.js
             - ui-inspector-field.js
             - ui-inspector.js
             - ui-keyboard.js: **FINISHED**
             - ui-loading.js
-            - ui-modal.js
+            - ui-modal.js: **FINISHED**
             - ui-selectarea.js
             - ui-sidepanel.js: **FINISHED**
             - ui-toolbar.js: **FINISHED**

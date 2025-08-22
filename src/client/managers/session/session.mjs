@@ -3,7 +3,7 @@
 //     locales = require("../../locales");
 
 import "semver";
-import UiModal from "../../ui/ui-modal";
+import UiModal from "../../ui/ui-modal.mjs";
 import "../../locales/index.mjs";
 
 class Session {

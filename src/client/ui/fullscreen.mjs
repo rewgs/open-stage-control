@@ -4,7 +4,7 @@
 //     iOS = require("./ios.mjs");
 
 import screenfull from "screenfull";
-import UiModal from "./ui-modal";
+import UiModal from "./ui-modal.mjs";
 import locales from "../locales/index.mjs";
 import iOS from "./ios.mjs";
 
