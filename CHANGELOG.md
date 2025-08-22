@@ -2,6 +2,10 @@
 
 ## 1.29.9-dev
 
+- Added `prettier` config to [`package.json`](./package.json).
+- Changed [`.eslinstrc.json`](./.eslintrc.json):
+    - `"quotes": ["error", "single", { "allowTemplateLiterals": true }]` -> `"quotes": ["error", "double", { "allowTemplateLiterals": true }]`
+    - `"semi": ["error", "never"]` -> `"semi": ["error", "always"]`
 - Changing all instances of `var` in import blocks to `let` or `const`. Note that other instances of `var` will be dealt with later.
 - Migrating from CommonJS (CJS) to ECMAScript Modules (ESM):
     - client/
