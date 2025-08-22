@@ -1,17 +1,32 @@
-var UiWidget = require("./ui-widget"),
-    html = require("nanohtml"),
-    doubleClick = require("../events/double-click"),
-    Sortable = require("sortablejs"),
-    morph = require("nanomorph"),
-    locales = require("../locales/index.mjs"),
-    raw = require("nanohtml/raw"),
-    { icon } = require("./utils"),
-    Root,
-    Panel,
-    Matrix,
-    Keyboard,
-    widgetManager,
-    { widgets, categories } = require("../widgets");
+// var UiWidget = require("./ui-widget");
+// var html = require("nanohtml");
+// var doubleClick = require("../events/double-click");
+// var Sortable = require("sortablejs");
+// var morph = require("nanomorph");
+// var locales = require("../locales/index.mjs");
+// var raw = require("nanohtml/raw");
+// var { icon } = require("./utils");
+// var Root;
+// var Panel;
+// var Matrix;
+// var Keyboard;
+// var widgetManager;
+// var { widgets, categories } = require("../widgets");
+
+import UiWidget from "./ui-widget.mjs";
+import { nanohtml as html } from "nanohtml";
+import doubleClick from "../events/double-click.mjs";
+import Sortable from "sortablejs";
+import morph from "nanomorph/lib/morph";
+import locales from "../locales/index.mjs";
+import raw from "nanohtml/raw";
+import { icon } from "./utils.mjs";
+import Root from "../widgets/containers/root";
+import Panel from "../widgets/containers/panel";
+import Matrix from "../widgets/containers/matrix";
+import Keyboard from "../widgets/containers/keyboard";
+import { widgetManager } from "../managers/widgets.mjs";
+import { widgets, categories } from "../widgets";
 
 var widgetIcons = {
     root: "bookmark",
@@ -51,11 +66,11 @@ for (var type in widgets) {
 
 class UiTree extends UiWidget {
     constructor(options) {
-        Root = require("../widgets/containers/root");
-        Panel = require("../widgets/containers/panel");
-        Matrix = require("../widgets/containers/matrix");
-        Keyboard = require("../widgets/containers/keyboard");
-        widgetManager = require("../managers/widgets.mjs");
+        // Root = require("../widgets/containers/root");
+        // Panel = require("../widgets/containers/panel");
+        // Matrix = require("../widgets/containers/matrix");
+        // Keyboard = require("../widgets/containers/keyboard");
+        // widgetManager = require("../managers/widgets.mjs");
 
         super(options);
 
@@ -391,4 +406,5 @@ class UiTree extends UiWidget {
     }
 }
 
-module.exports = UiTree;
+// module.exports = UiTree;
+export default UiTree;

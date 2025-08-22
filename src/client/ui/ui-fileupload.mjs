@@ -5,7 +5,7 @@
 //     CONTAINER = null;
 
 import locales from "../locales/index.mjs";
-import uiLoading from "./ui-loading";
+import uiLoading from "./ui-loading.mjs";
 import { nanohtml as html } from "nanohtml";
 
 let SINGLETON = null;

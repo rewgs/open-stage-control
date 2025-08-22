@@ -25,7 +25,7 @@ import defaults from "../widgets/";
 import { diff } from "jsondiffpatch";
 import UiSelectArea from "../ui/ui-selectarea.js";
 import UiInspector from "../ui/ui-inspector.js";
-import UiTree from "../ui/ui-tree.js";
+import UiTree from "../ui/ui-tree.mjs";
 import UiDragResize from "../ui/ui-dragresize.mjs";
 import notifications from "../ui/notifications";
 import locales from "../locales/index.mjs";

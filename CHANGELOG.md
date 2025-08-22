@@ -64,29 +64,79 @@
             - ui-inspector-field.js: **FINISHED**
             - ui-inspector.js: **_IN PROGRESS_**
             - ui-keyboard.js: **FINISHED**
-            - ui-loading.js
+            - ui-loading.js: **FINISHED**
             - ui-modal.js: **FINISHED**
-            - ui-selectarea.js
+            - ui-selectarea.js: **FINISHED**
             - ui-sidepanel.js: **FINISHED**
             - ui-toolbar.js: **FINISHED**
-            - ui-tree.js
+            - ui-tree.js: **FINISHED**
             - ui-widget.js: **FINISHED**
             - ui-workspace.js: **FINISHED**
             - utils.js: **FINISHED**
             - zoom.js: **FINISHED**
         - utils.js: **FINISHED**
         - widgets/
-            - basics/ <!-- TODO: -->
-            - common/ <!-- TODO: -->
-            - containers/ <!-- TODO: -->
-            - frames/ <!-- TODO: -->
-            - graphs/ <!-- TODO: -->
+            - basics/
+                - button.js
+                - dropdown.js
+                - file.js
+                - input.js
+                - menu-base.js
+                - menu.js
+                - switch.js
+                - textarea.js
+            - common/
+                - canvas.js
+                - container.js
+                - osc-receiver.js
+                - queue.js
+                - widget.js
+            - containers/
+                - clone.js
+                - folder.js
+                - fragment.js
+                - keyboard.js
+                - matrix.js
+                - modal.js
+                - panel.js
+                - patchbay.js
+                - root.js
+                - tab.js
+            - frames/
+                - frame.js
+                - html.js
+                - image.js
+                - svg.js
+            - graphs/
+                - eq.js
+                - plot.js
+                - visualizer.js
+            - indicators/
+                - led.js
+                - text.js
+            - mixins/
+                - double_tap.js
+                - static_properties.js
+                - touch_state.js
+            - pads/
+                - canvas.js
+                - multixy.js
+                - pad.js
+                - rgb.js
+                - xy.js
+            - scripts/
+                - gyro-archive.js
+                - script.js
+                - script-vm.js
+                - script-widget.js
+                - variable.js
+            - sliders/
+                - encoder.js
+                - fader.js
+                - knob.js
+                - range.js
+                - slider.js
             - index.js
-            - indicators/ <!-- TODO: -->
-            - mixins/ <!-- TODO: -->
-            - pads/ <!-- TODO: -->
-            - scripts/ <!-- TODO: -->
-            - sliders/ <!-- TODO: -->
             - utils.js
             - vm.js
     - launcher/

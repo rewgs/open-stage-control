@@ -19,7 +19,7 @@ import "../../editor/index.js";
 import uiFilebrowser from "../../ui/ui-filebrowser.mjs";
 import uiFileupload from "../../ui/ui-fileupload.mjs";
 import UiModal from "../../ui/ui-modal.mjs";
-import uiLoading from "../../ui/ui-loading.js";
+import uiLoading from "../../ui/ui-loading.mjs";
 import uiConsole from "../../ui/ui-console.mjs";
 import { saveAs } from "file-saver";
 import widgetManager from "../widgets.mjs";
