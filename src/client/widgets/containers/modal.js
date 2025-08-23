@@ -1,4 +1,4 @@
-var Panel = require("./panel"),
+var Panel = require("./panel.mjs"),
     { icon, iconify } = require("../../ui/utils.mjs"),
     resize = require("../../events/resize"),
     doubleTap = require("../mixins/double_tap"),

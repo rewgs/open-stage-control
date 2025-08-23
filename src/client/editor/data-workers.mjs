@@ -12,7 +12,7 @@ import resize from "../events/resize";
 import stateManager from "../managers/state.mjs";
 import parser from "../parser.mjs";
 import editor from ".";
-import Panel from "../widgets/containers/panel";
+import Panel from "../widgets/containers/panel.mjs";
 import Matrix from "../widgets/containers/matrix";
 
 // This seems unnecessary?

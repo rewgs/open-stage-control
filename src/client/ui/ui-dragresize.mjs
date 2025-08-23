@@ -12,7 +12,7 @@ import { nanohtml as html } from "nanohtml";
 import fastdom from "fastdom";
 import Tab from "../widgets/containers/tab";
 import Root from "../widgets/containers/root";
-import Folder from "../widgets/containers/folder";
+import Folder from "../widgets/containers/folder.mjs";
 
 class UiDragResize extends UiWidget {
     constructor(options) {

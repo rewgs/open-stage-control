@@ -92,14 +92,14 @@
                 - queue.js: **FINISHED**
                 - widget.js: **FINISHED**
             - containers/
-                - clone.js
-                - folder.js
+                - clone.js: **FINISHED**
+                - folder.js: **FINISHED**
                 - fragment.js
                 - keyboard.js
                 - matrix.js
                 - modal.js
-                - panel.js
-                - patchbay.js
+                - panel.js: **FINISHED**
+                - patchbay.js: **FINISHED**
                 - root.js
                 - tab.js
             - frames/

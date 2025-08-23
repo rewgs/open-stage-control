@@ -9,8 +9,8 @@ module.exports.widgets = {
     file: require("./basics/file.mjs"),
 
     // containers
-    panel: require("./containers/panel"),
-    folder: require("./containers/folder"),
+    panel: require("./containers/panel.mjs"),
+    folder: require("./containers/folder.mjs"),
     root: require("./containers/root"),
     tab: require("./containers/tab"),
     modal: require("./containers/modal"),
@@ -18,8 +18,8 @@ module.exports.widgets = {
     fragment: require("./containers/fragment"),
     matrix: require("./containers/matrix"),
     keyboard: require("./containers/keyboard"),
-    patchbay: require("./containers/patchbay").PatchBay,
-    patchbaynode: require("./containers/patchbay").PatchBayNode,
+    patchbay: require("./containers/patchbay.mjs").PatchBay,
+    patchbaynode: require("./containers/patchbay.mjs").PatchBayNode,
 
     // frames
     image: require("./frames/image"),

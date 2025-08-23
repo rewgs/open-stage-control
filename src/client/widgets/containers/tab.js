@@ -1,4 +1,4 @@
-var Panel = require("./panel"),
+var Panel = require("./panel.mjs"),
     resize = require("../../events/resize"),
     { iconify } = require("../../ui/utils.mjs");
 

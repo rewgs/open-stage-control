@@ -1,4 +1,4 @@
-var Panel = require("./panel"),
+var Panel = require("./panel.mjs"),
     StaticProperties = require("../mixins/static_properties"),
     { updateMobileThemeColor } = require("../../ui/utils.mjs"),
     mainMenu;

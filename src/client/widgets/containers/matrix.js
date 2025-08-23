@@ -1,4 +1,4 @@
-var Panel = require("./panel"),
+var Panel = require("./panel.mjs"),
     parser = require("../../parser.mjs"),
     { deepCopy } = require("../../utils"),
     Session = require("../../managers/session/session.mjs"),

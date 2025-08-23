@@ -1,18 +1,36 @@
-var Container = require("../common/container.mjs"),
-    widgetManager = require("../../managers/widgets.mjs"),
-    parser = require("../../parser.mjs"),
-    html = require("nanohtml"),
-    {
-        enableTraversingGestures,
-        disableTraversingGestures
-    } = require("../../events/drag"),
-    { setScrollbarColor } = require("../../ui/utils.mjs"),
-    iOS13 = require("../../ui/ios.mjs") === 13,
-    Fader = require("../sliders/fader"),
-    faderDefaults,
-    Script = require("../scripts/script"),
-    resize = require("../../events/resize"),
-    fastdom = require("fastdom");
+// var Container = require("../common/container.mjs");
+// var widgetManager = require("../../managers/widgets.mjs");
+// var parser = require("../../parser.mjs");
+// var html = require("nanohtml");
+// var {
+//     enableTraversingGestures,
+//     disableTraversingGestures
+// } = require("../../events/drag");
+// var { setScrollbarColor } = require("../../ui/utils.mjs");
+// var iOS13 = require("../../ui/ios.mjs") === 13;
+// var Fader = require("../sliders/fader");
+// var faderDefaults;
+// var Script = require("../scripts/script");
+// var resize = require("../../events/resize");
+// var fastdom = require("fastdom");
+
+import Container from "../common/container.mjs";
+import { widgetManager } from "../../managers/widgets.mjs";
+import parser from "../../parser.mjs";
+import { nanohtml as html } from "nanohtml";
+import {
+    enableTraversingGestures,
+    disableTraversingGestures
+} from "../../events/drag.mjs";
+import { setScrollbarColor } from "../../ui/utils.mjs";
+import Fader from "../sliders/fader";
+import Script from "../scripts/script";
+import { check } from "../../events/resize.mjs";
+import fastdom from "fastdom";
+import { iOS } from "../../ui/ios.mjs";
+
+let faderDefaults;
+let iOS13 = iOS === 13;
 
 class Panel extends Container() {
     static description() {
@@ -628,4 +646,5 @@ Panel.dynamicProps = Panel.prototype.constructor.dynamicProps.concat(
     "traversing"
 );
 
-module.exports = Panel;
+// module.exports = Panel;
+export default Panel;

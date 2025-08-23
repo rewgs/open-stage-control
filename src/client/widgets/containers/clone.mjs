@@ -1,11 +1,21 @@
-var Container = require("../common/container.mjs"),
-    widgetManager = require("../../managers/widgets.mjs"),
-    resize = require("../../events/resize"),
-    parser = require("../../parser.mjs"),
-    { deepCopy, deepEqual } = require("../../utils"),
-    { diff, diffToWidget } = require("../../editor/diff.mjs"),
-    html = require("nanohtml"),
-    Session = require("../../managers/session/session.mjs");
+// var Container = require("../common/container.mjs"),
+//     widgetManager = require("../../managers/widgets.mjs"),
+//     resize = require("../../events/resize"),
+//     parser = require("../../parser.mjs"),
+//     { deepCopy, deepEqual } = require("../../utils"),
+//     { diff, diffToWidget } = require("../../editor/diff.mjs"),
+//     html = require("nanohtml"),
+//     Session = require("../../managers/session/session.mjs");
+
+import Container from "../common/container.mjs";
+import { widgetManager } from "../../managers/widgets.mjs";
+import { check } from "../../events/resize.mjs";
+import parser from "../../parser.mjs";
+import { deepCopy, deepEqual } from "../../utils.mjs";
+import { diffToWidget } from "../../editor/diff.mjs";
+import { diff } from "jsondiffpatch";
+import { nanohtml as html } from "nanohtml";
+import Session from "../../managers/session/session.mjs";
 
 var excludedCloneClasses = [
     "widget",
@@ -260,7 +270,8 @@ class Clone extends Container() {
 
         Session.converters["1.13.2"].widget(data);
 
-        var delta = diff.diff(clone.props, data) || {},
+        // var delta = diff.diff(clone.props, data) || {},
+        var delta = diff(clone.props, data) || {},
             [widget, patch] = diffToWidget(clone, delta),
             changedProps = Object.keys(patch);
 
@@ -297,7 +308,8 @@ class Clone extends Container() {
                 w.container.classList.add("not-editable");
             }
 
-            if (checkResize) resize.check(this.widget);
+            // if (checkResize) resize.check(this.widget);
+            if (checkResize) check(this.widget);
         } else if (this.cloneClass.length) {
             this.container.classList.remove(...this.cloneClass);
             this.container.classList.add("empty");
@@ -334,4 +346,5 @@ Clone.dynamicProps = Clone.prototype.constructor.dynamicProps.concat(
     "props"
 );
 
-module.exports = Clone;
+// module.exports = Clone;
+export default Clone;

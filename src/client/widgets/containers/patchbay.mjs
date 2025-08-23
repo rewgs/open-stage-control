@@ -1,11 +1,18 @@
-var Widget = require("../common/widget.mjs"),
-    Canvas = require("../common/canvas"),
-    Container = require("../common/container.mjs"),
-    { iconify } = require("../../ui/utils.mjs"),
-    parser = require("../../parser.mjs"),
-    html = require("nanohtml");
+// var Widget = require("../common/widget.mjs"),
+//     Canvas = require("../common/canvas"),
+//     Container = require("../common/container.mjs"),
+//     { iconify } = require("../../ui/utils.mjs"),
+//     parser = require("../../parser.mjs"),
+//     html = require("nanohtml");
 
-class PatchBayNode extends Widget {
+import Widget from "../common/widget.mjs";
+import Canvas from "../common/canvas.mjs";
+import Container from "../common/container.mjs";
+import { iconify } from "../../ui/utils.mjs";
+import parser from "../../parser.mjs";
+import { nanohtml as html } from "nanohtml";
+
+export class PatchBayNode extends Widget {
     static defaults() {
         return super.defaults().extend({
             style: {
@@ -83,7 +90,7 @@ class PatchBayNode extends Widget {
     }
 }
 
-class PatchBay extends Container(Canvas) {
+export class PatchBay extends Container(Canvas) {
     static description() {
         return "Connect inputs to outputs.";
     }
@@ -385,7 +392,7 @@ class PatchBay extends Container(Canvas) {
     }
 }
 
-module.exports = {
-    PatchBay,
-    PatchBayNode
-};
+// module.exports = {
+//     PatchBay,
+//     PatchBayNode
+// };
