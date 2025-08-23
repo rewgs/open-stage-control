@@ -1,4 +1,4 @@
-var Widget = require("../common/widget"),
+var Widget = require("../common/widget.mjs"),
     html = require("nanohtml"),
     uiFilebrowser = require("../../ui/ui-filebrowser.mjs");
 

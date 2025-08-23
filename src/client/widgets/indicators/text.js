@@ -1,5 +1,5 @@
 var { iconify } = require("../../ui/utils.mjs"),
-    Widget = require("../common/widget"),
+    Widget = require("../common/widget.mjs"),
     html = require("nanohtml");
 
 module.exports = class Text extends Widget {

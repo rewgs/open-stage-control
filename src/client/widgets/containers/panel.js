@@ -1,4 +1,4 @@
-var Container = require("../common/container"),
+var Container = require("../common/container.mjs"),
     widgetManager = require("../../managers/widgets.mjs"),
     parser = require("../../parser.mjs"),
     html = require("nanohtml"),

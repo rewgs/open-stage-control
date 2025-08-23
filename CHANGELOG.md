@@ -86,10 +86,10 @@
                 - switch.js
                 - textarea.js
             - common/
-                - canvas.js
-                - container.js
-                - osc-receiver.js
-                - queue.js
+                - canvas.js: **FINISHED**
+                - container.js: **FINISHED**
+                - osc-receiver.js: **FINISHED**
+                - queue.js: **FINISHED**
                 - widget.js: **FINISHED**
             - containers/
                 - clone.js

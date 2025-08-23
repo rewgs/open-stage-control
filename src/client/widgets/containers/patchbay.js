@@ -1,6 +1,6 @@
-var Widget = require("../common/widget"),
+var Widget = require("../common/widget.mjs"),
     Canvas = require("../common/canvas"),
-    Container = require("../common/container"),
+    Container = require("../common/container.mjs"),
     { iconify } = require("../../ui/utils.mjs"),
     parser = require("../../parser.mjs"),
     html = require("nanohtml");

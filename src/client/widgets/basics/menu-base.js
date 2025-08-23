@@ -1,4 +1,4 @@
-var Widget = require("../common/widget"),
+var Widget = require("../common/widget.mjs"),
     { iconify } = require("../../ui/utils.mjs"),
     { deepEqual } = require("../../utils");
 

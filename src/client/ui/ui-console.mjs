@@ -13,7 +13,7 @@ import raw from "nanohtml/raw";
 import locales from "../locales/index.mjs";
 import { icon } from "./utils.mjs";
 import Script from "../widgets/scripts/script";
-import Widget from "../widgets/common/widget";
+import Widget from "../widgets/common/widget.mjs";
 import { widgetManager } from "../managers/widgets.mjs";
 
 class UiConsole extends UiSidePanel {

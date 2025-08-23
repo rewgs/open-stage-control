@@ -1,4 +1,6 @@
-var EventEmitter = require("../../events/event-emitter.mjs");
+// var EventEmitter = require("../../events/event-emitter.mjs");
+
+import EventEmitter from "../../events/event-emitter.mjs";
 
 class CanvasQueue extends EventEmitter {
     constructor() {
@@ -57,4 +59,5 @@ class CanvasQueue extends EventEmitter {
     }
 }
 
-module.exports = new CanvasQueue();
+// module.exports = new CanvasQueue();
+export const canvasQueue = new CanvasQueue();

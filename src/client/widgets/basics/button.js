@@ -1,4 +1,4 @@
-var Widget = require("../common/widget"),
+var Widget = require("../common/widget.mjs"),
     doubleTap = require("../mixins/double_tap"),
     html = require("nanohtml"),
     { deepEqual, isJSON } = require("../../utils"),

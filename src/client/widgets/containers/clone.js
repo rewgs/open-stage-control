@@ -1,4 +1,4 @@
-var Container = require("../common/container"),
+var Container = require("../common/container.mjs"),
     widgetManager = require("../../managers/widgets.mjs"),
     resize = require("../../events/resize"),
     parser = require("../../parser.mjs"),

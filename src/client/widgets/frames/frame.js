@@ -1,4 +1,4 @@
-var Widget = require("../common/widget"),
+var Widget = require("../common/widget.mjs"),
     html = require("nanohtml"),
     locales = require("../../locales/index.mjs"),
     StaticProperties = require("../mixins/static_properties");

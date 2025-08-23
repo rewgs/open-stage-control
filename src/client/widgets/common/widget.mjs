@@ -32,7 +32,7 @@ import { urlParser, balancedReplace } from "../utils.mjs";
 import Vm from "../vm.mjs";
 import "scope-css";
 import "../../events/resize.mjs";
-import OscReceiver from "./osc-receiver";
+import OscReceiver from "./osc-receiver.mjs";
 import { deepCopy, deepEqual, isJSON } from "../../utils.mjs";
 import { nanohtml as html } from "nanohtml";
 import morph from "nanomorph/lib/morph";

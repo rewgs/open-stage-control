@@ -1,5 +1,5 @@
 var Panel = require("./panel"),
-    Widget = require("../common/widget"),
+    Widget = require("../common/widget.mjs"),
     parser = require("../../parser.mjs"),
     { mapToScale } = require("../utils");
 
