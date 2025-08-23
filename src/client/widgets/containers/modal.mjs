@@ -1,10 +1,20 @@
-var Panel = require("./panel.mjs"),
-    { icon, iconify } = require("../../ui/utils.mjs"),
-    resize = require("../../events/resize"),
-    doubleTap = require("../mixins/double_tap"),
-    html = require("nanohtml"),
-    raw = require("nanohtml/raw"),
-    iOS13 = require("../../ui/ios.mjs") === 13;
+// var Panel = require("./panel.mjs"),
+//     { icon, iconify } = require("../../ui/utils.mjs"),
+//     resize = require("../../events/resize"),
+//     doubleTap = require("../mixins/double_tap"),
+//     html = require("nanohtml"),
+//     raw = require("nanohtml/raw"),
+//     iOS13 = require("../../ui/ios.mjs") === 13;
+
+import Panel from "./panel.mjs";
+import { icon, iconify } from "../../ui/utils.mjs";
+import { check } from "../../events/resize.mjs";
+import { double_tap as doubleTap } from "../mixins/double_tap";
+import { nanohtml as html } from "nanohtml";
+import raw from "nanohtml/raw";
+import iOS from "../../ui/ios.mjs";
+
+let iOS13 = iOS === 13;
 
 class Modal extends Panel {
     static description() {
@@ -230,7 +240,8 @@ class Modal extends Panel {
 
         this.setVisibility();
         if (this.value) {
-            resize.check(this.widget, true);
+            // resize.check(this.widget, true);
+            check(this.widget, true);
         }
 
         if (options.send) this.sendValue();
@@ -373,4 +384,5 @@ Modal.dynamicProps = Modal.prototype.constructor.dynamicProps.concat(
     "popupPadding"
 );
 
-module.exports = Modal;
+// module.exports = Modal;
+export default Modal;

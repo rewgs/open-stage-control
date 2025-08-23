@@ -23,8 +23,8 @@ import raw from "nanohtml/raw";
 import { icon } from "./utils.mjs";
 import Root from "../widgets/containers/root";
 import Panel from "../widgets/containers/panel.mjs";
-import Matrix from "../widgets/containers/matrix";
-import Keyboard from "../widgets/containers/keyboard";
+import Matrix from "../widgets/containers/matrix.mjs";
+import Keyboard from "../widgets/containers/keyboard.mjs";
 import { widgetManager } from "../managers/widgets.mjs";
 import { widgets, categories } from "../widgets";
 

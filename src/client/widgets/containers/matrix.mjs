@@ -1,8 +1,14 @@
-var Panel = require("./panel.mjs"),
-    parser = require("../../parser.mjs"),
-    { deepCopy } = require("../../utils"),
-    Session = require("../../managers/session/session.mjs"),
-    widgetManager = require("../../managers/widgets.mjs");
+// var Panel = require("./panel.mjs"),
+//     parser = require("../../parser.mjs"),
+//     { deepCopy } = require("../../utils"),
+//     Session = require("../../managers/session/session.mjs"),
+//     widgetManager = require("../../managers/widgets.mjs");
+
+import Panel from "./panel.mjs";
+import parser from "../../parser.mjs";
+import { deepCopy } from "../../utils.mjs";
+import Session from "../../managers/session/session.mjs";
+import { widgetManager } from "../../managers/widgets.mjs";
 
 class Matrix extends Panel {
     static description() {
@@ -352,4 +358,5 @@ Matrix.dynamicProps = Matrix.prototype.constructor.dynamicProps.concat(
     "props"
 );
 
-module.exports = Matrix;
+// module.exports = Matrix;
+export default Matrix;

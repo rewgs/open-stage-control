@@ -1,7 +1,12 @@
-var Panel = require("./panel.mjs"),
-    Widget = require("../common/widget.mjs"),
-    parser = require("../../parser.mjs"),
-    { mapToScale } = require("../utils");
+// var Panel = require("./panel.mjs"),
+//     Widget = require("../common/widget.mjs"),
+//     parser = require("../../parser.mjs"),
+//     { mapToScale } = require("../utils");
+
+import Panel from "./panel.mjs";
+import Widget from "../common/widget.mjs";
+import parser from "../../parser.mjs";
+import { mapToScale } from "../utils.mjs";
 
 class Keyboard extends Panel {
     static description() {
@@ -233,4 +238,5 @@ Keyboard.cssVariables = Keyboard.prototype.constructor.cssVariables.concat(
     { js: "colorBlack", css: "--color-black-key" }
 );
 
-module.exports = Keyboard;
+// module.exports = Keyboard;
+export default Keyboard;

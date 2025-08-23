@@ -94,10 +94,10 @@
             - containers/
                 - clone.js: **FINISHED**
                 - folder.js: **FINISHED**
-                - fragment.js
-                - keyboard.js
-                - matrix.js
-                - modal.js
+                - fragment.js: **_IN PROGRESS_** -- importing diff from diff.mjs doesn't work
+                - keyboard.js: **FINISHED**
+                - matrix.js: **FINISHED**
+                - modal.js: **FINISHED**
                 - panel.js: **FINISHED**
                 - patchbay.js: **FINISHED**
                 - root.js

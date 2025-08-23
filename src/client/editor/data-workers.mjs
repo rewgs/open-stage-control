@@ -13,7 +13,7 @@ import stateManager from "../managers/state.mjs";
 import parser from "../parser.mjs";
 import editor from ".";
 import Panel from "../widgets/containers/panel.mjs";
-import Matrix from "../widgets/containers/matrix";
+import Matrix from "../widgets/containers/matrix.mjs";
 
 // This seems unnecessary?
 // setTimeout(() => {

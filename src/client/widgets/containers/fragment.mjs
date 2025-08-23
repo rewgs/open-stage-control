@@ -1,12 +1,22 @@
-var Container = require("../common/container.mjs"),
-    widgetManager = require("../../managers/widgets.mjs"),
-    resize = require("../../events/resize"),
-    parser = require("../../parser.mjs"),
-    { deepCopy, deepEqual } = require("../../utils"),
-    { diff, diffToWidget } = require("../../editor/diff.mjs"),
-    html = require("nanohtml"),
-    sessionManager,
-    Session = require("../../managers/session/session.mjs");
+// var Container = require("../common/container.mjs");
+// var widgetManager = require("../../managers/widgets.mjs");
+// var resize = require("../../events/resize");
+// var parser = require("../../parser.mjs");
+// var { deepCopy, deepEqual } = require("../../utils");
+var { diff, diffToWidget } = require("../../editor/diff.mjs");
+// var html = require("nanohtml");
+// var sessionManager;
+// var Session = require("../../managers/session/session.mjs");
+
+import Container from "../common/container.mjs";
+import { widgetManager } from "../../managers/widgets.mjs";
+import { check } from "../../events/resize.mjs";
+import parser from "../../parser.mjs";
+import { deepCopy, deepEqual } from "../../utils.mjs";
+import { nanohtml as html } from "nanohtml";
+import Session from "../../managers/session/session.mjs";
+
+let sessionManager;
 
 var excludedfragmentClasses = [
     "widget",
@@ -74,7 +84,8 @@ class Fragment extends Container() {
         });
 
         sessionManager =
-            sessionManager || require("../../managers/session/index.mjs");
+            // sessionManager || require("../../managers/session/index.mjs");
+            sessionManager || new Session();
 
         sessionManager.on(
             "fragment-updated",
@@ -172,7 +183,8 @@ class Fragment extends Container() {
                 w.container.classList.add("not-editable");
             }
 
-            if (checkResize) resize.check(this.widget);
+            // if (checkResize) resize.check(this.widget);
+            if (checkResize) check(this.widget);
         } else if (this.fragmentClass.length) {
             this.container.classList.remove(...this.fragmentClass);
             this.container.classList.add("empty");
@@ -226,4 +238,5 @@ class Fragment extends Container() {
 Fragment.dynamicProps =
     Fragment.prototype.constructor.dynamicProps.concat("props");
 
-module.exports = Fragment;
+// module.exports = Fragment;
+export default Fragment;
