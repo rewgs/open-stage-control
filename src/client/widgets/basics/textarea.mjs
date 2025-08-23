@@ -1,5 +1,8 @@
-var Widget = require("../common/widget.mjs"),
-    html = require("nanohtml");
+// var Widget = require("../common/widget.mjs"),
+//     html = require("nanohtml");
+
+import Widget from "../common/widget.mjs";
+import { nanohtml as html } from "nanohtml";
 
 class TextArea extends Widget {
     static description() {
@@ -99,4 +102,5 @@ TextArea.dynamicProps = TextArea.prototype.constructor.dynamicProps.filter(
     (x) => x !== "interaction"
 );
 
-module.exports = TextArea;
+// module.exports = TextArea;
+export default TextArea;

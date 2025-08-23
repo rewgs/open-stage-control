@@ -1,7 +1,12 @@
-var MenuBase = require("./menu-base"),
-    { iconify } = require("../../ui/utils.mjs"),
-    html = require("nanohtml"),
-    raw = require("nanohtml/raw");
+// var MenuBase = require("./menu-base.mjs"),
+//     { iconify } = require("../../ui/utils.mjs"),
+//     html = require("nanohtml"),
+//     raw = require("nanohtml/raw");
+
+import { MenuBase } from "./menu-base.mjs";
+import { iconify } from "../../ui/utils.mjs";
+import { nanohtml as html } from "nanohtml";
+import raw from "nanohtml/raw";
 
 class Switch extends MenuBase {
     static description() {
@@ -183,4 +188,5 @@ Switch.cssVariables = Switch.prototype.constructor.cssVariables.concat({
     css: "--color-text-on"
 });
 
-module.exports = Switch;
+// module.exports = Switch;
+export default Switch;

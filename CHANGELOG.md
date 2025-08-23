@@ -77,14 +77,14 @@
         - utils.js: **FINISHED**
         - widgets/
             - basics/
-                - button.js
-                - dropdown.js
-                - file.js
-                - input.js
-                - menu-base.js
-                - menu.js
-                - switch.js
-                - textarea.js
+                - button.js: **FINISHED**
+                - dropdown.js: **FINISHED**
+                - file.js: **FINISHED**
+                - input.js: **FINISHED**
+                - menu-base.js: **FINISHED**
+                - menu.js: **FINISHED**
+                - switch.js: **FINISHED**
+                - textarea.js: **FINISHED**
             - common/
                 - canvas.js: **FINISHED**
                 - container.js: **FINISHED**

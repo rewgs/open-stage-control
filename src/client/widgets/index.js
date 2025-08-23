@@ -1,12 +1,12 @@
 module.exports.widgets = {
     // basics
-    button: require("./basics/button"),
-    switch: require("./basics/switch"),
-    dropdown: require("./basics/dropdown"),
-    menu: require("./basics/menu"),
-    input: require("./basics/input"),
-    textarea: require("./basics/textarea"),
-    file: require("./basics/file"),
+    button: require("./basics/button.mjs"),
+    switch: require("./basics/switch.mjs"),
+    dropdown: require("./basics/dropdown.mjs"),
+    menu: require("./basics/menu.mjs"),
+    input: require("./basics/input.mjs"),
+    textarea: require("./basics/textarea.mjs"),
+    file: require("./basics/file.mjs"),
 
     // containers
     panel: require("./containers/panel"),

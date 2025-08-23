@@ -250,4 +250,5 @@ Canvas.cssVariables = Canvas.prototype.constructor.cssVariables.concat(
     }
 );
 
-module.exports = Canvas;
+// module.exports = Canvas;
+export default Canvas;

@@ -1,9 +1,16 @@
-var Widget = require("../common/widget.mjs"),
-    doubleTap = require("../mixins/double_tap"),
-    html = require("nanohtml"),
-    { deepEqual, isJSON } = require("../../utils"),
-    { iconify } = require("../../ui/utils.mjs"),
-    parser = require("../../parser.mjs");
+// var Widget = require("../common/widget.mjs"),
+//     doubleTap = require("../mixins/double_tap"),
+//     html = require("nanohtml"),
+//     { deepEqual, isJSON } = require("../../utils"),
+//     { iconify } = require("../../ui/utils.mjs"),
+//     parser = require("../../parser.mjs");
+
+import Widget from "../common/widget.mjs";
+import { double_tap as doubleTap } from "../mixins/double_tap";
+import { nanohtml as html } from "nanohtml";
+import { deepEqual, isJSON } from "../../utils.mjs";
+import { iconify } from "../../ui/utils.mjs";
+import parser from "../../parser.mjs";
 
 class Button extends Widget {
     static description() {
@@ -491,4 +498,5 @@ Button.dynamicProps = Button.prototype.constructor.dynamicProps.concat(
     "label"
 );
 
-module.exports = Button;
+// module.exports = Button;
+export default Button;

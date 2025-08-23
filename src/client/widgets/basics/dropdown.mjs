@@ -1,6 +1,10 @@
-var MenuBase = require("./menu-base"),
-    html = require("nanohtml"),
-    iOS = require("../../ui/ios.mjs");
+// var MenuBase = require("./menu-base.mjs"),
+//     html = require("nanohtml"),
+//     iOS = require("../../ui/ios.mjs");
+
+import { MenuBase } from "./menu-base.mjs";
+import { nanohtml as html } from "nanohtml";
+import iOS from "../../ui/ios.mjs";
 
 class Dropdown extends MenuBase {
     static description() {
@@ -153,4 +157,5 @@ Dropdown.dynamicProps = Dropdown.prototype.constructor.dynamicProps.concat(
     "label"
 );
 
-module.exports = Dropdown;
+// module.exports = Dropdown;
+export default Dropdown;

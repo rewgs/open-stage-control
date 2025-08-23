@@ -1,9 +1,16 @@
-var MenuBase = require("./menu-base"),
-    { iconify } = require("../../ui/utils.mjs"),
-    doubleTap = require("../mixins/double_tap"),
-    html = require("nanohtml"),
-    raw = require("nanohtml/raw"),
-    iOS = require("../../ui/ios.mjs");
+// var MenuBase = require("./menu-base.mjs"),
+//     { iconify } = require("../../ui/utils.mjs"),
+//     doubleTap = require("../mixins/double_tap"),
+//     html = require("nanohtml"),
+//     raw = require("nanohtml/raw"),
+//     iOS = require("../../ui/ios.mjs");
+
+import { MenuBase } from "./menu-base.mjs";
+import { iconify } from "../../ui/utils.mjs";
+import { double_tap as doubleTap } from "../mixins/double_tap";
+import { nanohtml as html } from "nanohtml";
+import raw from "nanohtml/raw";
+import iOS from "../../ui/ios.mjs";
 
 class Menu extends MenuBase {
     static description() {
@@ -467,4 +474,5 @@ Menu.dynamicProps = Menu.prototype.constructor.dynamicProps.concat(
     "values"
 );
 
-module.exports = Menu;
+// module.exports = Menu;
+export default Menu;

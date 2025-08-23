@@ -1,8 +1,12 @@
-var Widget = require("../common/widget.mjs"),
-    { iconify } = require("../../ui/utils.mjs"),
-    { deepEqual } = require("../../utils");
+// var Widget = require("../common/widget.mjs"),
+//     { iconify } = require("../../ui/utils.mjs"),
+//     { deepEqual } = require("../../utils");
 
-class MenuBase extends Widget {
+import Widget from "../common/widget.mjs";
+import { iconify } from "../../ui/utils.mjs";
+import { deepEqual } from "../../utils.mjs";
+
+export class MenuBase extends Widget {
     constructor(options) {
         super(options);
 
@@ -85,4 +89,4 @@ class MenuBase extends Widget {
     }
 }
 
-module.exports = MenuBase;
+// module.exports = MenuBase;
