@@ -246,7 +246,7 @@ import { keyboardjs as keyboardJS } from "keyboardjs";
 //     keyboardJS.setContext("filebrowser");
 // };
 
-export function UiFilebrowser(options, callback) {
+export function uiFilebrowser(options, callback) {
     var save = options.save,
         saveInputFocus = undefined,
         previousKbContext = keyboardJS.getContext();

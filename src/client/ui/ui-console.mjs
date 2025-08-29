@@ -12,7 +12,7 @@ import { nanohtml as html } from "nanohtml";
 import raw from "nanohtml/raw";
 import locales from "../locales/index.mjs";
 import { icon } from "./utils.mjs";
-import Script from "../widgets/scripts/script";
+import Script from "../widgets/scripts/script.mjs";
 import Widget from "../widgets/common/widget.mjs";
 import { widgetManager } from "../managers/widgets.mjs";
 

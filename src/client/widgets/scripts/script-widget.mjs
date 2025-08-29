@@ -1,8 +1,12 @@
-var Widget = require("../common/widget.mjs"),
-    keyboardJS = require("keyboardjs/dist/keyboard.min.js"),
-    Script = require("./script");
+// var Widget = require("../common/widget.mjs"),
+//     keyboardJS = require("keyboardjs/dist/keyboard.min.js"),
+//     Script = require("./script");
 
-class ScriptWidget extends Widget {
+import { keyboardjs as keyboardJS } from "keyboardjs";
+import Widget from "../common/widget.mjs";
+import { Script } from "./script.mjs";
+
+export class ScriptWidget extends Widget {
     static description() {
         return "Scripting widget utility with keyboard bindings";
     }
@@ -153,4 +157,4 @@ class ScriptWidget extends Widget {
     }
 }
 
-module.exports = ScriptWidget;
+// module.exports = ScriptWidget;

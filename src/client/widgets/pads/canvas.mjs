@@ -4,7 +4,7 @@
 //     html = require("nanohtml");
 
 import Canvas from "../common/canvas.mjs";
-import Script from "../scripts/script";
+import Script from "../scripts/script.mjs";
 import { widgetManager } from "../../managers/widgets.mjs";
 import { nanohtml as html } from "nanohtml";
 

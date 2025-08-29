@@ -4,7 +4,7 @@
 
 import Widget from "../common/widget.mjs";
 import { nanohtml as html } from "nanohtml";
-import { UiFilebrowser } from "../../ui/ui-filebrowser.mjs";
+import { uiFilebrowser } from "../../ui/ui-filebrowser.mjs";
 
 // module.exports = class File extends Widget {
 //     static description() {

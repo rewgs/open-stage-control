@@ -1,9 +1,13 @@
-var Widget = require("../common/widget.mjs"),
-    StaticProperties = require("../mixins/static_properties.mjs");
+// var Widget = require("../common/widget.mjs"),
+//     StaticProperties = require("../mixins/static_properties.mjs");
 
-module.exports = class Variable extends (
-    StaticProperties(Widget, { interaction: false, visible: false })
-) {
+import Widget from "../common/widget.mjs";
+import { StaticProperties } from "../mixins/static_properties.mjs";
+
+export class Variable extends StaticProperties(Widget, {
+    interaction: false,
+    visible: false
+}) {
     static description() {
         return "Receives / stores a value, to be used in scripts (using the get function) or in properties (using the @{} syntax).";
     }
@@ -29,4 +33,4 @@ module.exports = class Variable extends (
         if (options.sync) this.changed(options);
         if (options.send) this.sendValue(null, { syncOnly: true });
     }
-};
+}

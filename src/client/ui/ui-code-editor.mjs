@@ -19,7 +19,7 @@ import { nanohtml as html } from "nanohtml";
 import raw from "nanohtml/raw";
 import { icon } from "./utils.mjs";
 import { Ace } from "ace-builds";
-import { globals as scriptGlobals } from "../widgets/scripts/script-vm";
+import { globals as scriptGlobals } from "../widgets/scripts/script-vm.mjs";
 
 let ace = new Ace();
 ace.config.set("basePath", "/client/workers/");

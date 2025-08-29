@@ -1,12 +1,23 @@
-var widgetManager = require("../../managers/widgets.mjs"),
-    stateManager = require("../../managers/state.mjs"),
-    cache = require("../../managers/cache.mjs"),
-    { deepCopy } = require("../../utils"),
-    { urlParser } = require("../utils"),
-    Vm = require("../vm"),
-    ipc = require("../../ipc/index.mjs"),
-    uiFilebrowser = require("../../ui/ui-filebrowser.mjs"),
-    toolbar;
+// var widgetManager = require("../../managers/widgets.mjs"),
+//     stateManager = require("../../managers/state.mjs"),
+//     cache = require("../../managers/cache.mjs"),
+//     { deepCopy } = require("../../utils"),
+//     { urlParser } = require("../utils"),
+//     Vm = require("../vm"),
+//     ipc = require("../../ipc/index.mjs"),
+//     uiFilebrowser = require("../../ui/ui-filebrowser.mjs"),
+//     toolbar;
+
+import { widgetManager } from "../../managers/widgets.mjs";
+import { stateManager } from "../../managers/state.mjs";
+import cache from "../../managers/cache.mjs";
+import { deepCopy } from "../../utils.mjs";
+import { urlParser } from "../utils.mjs";
+import Vm from "../vm.mjs";
+import { ipc } from "../../ipc/index.mjs";
+import { uiFilebrowser } from "../../ui/ui-filebrowser.mjs";
+
+let toolbar;
 
 class ScriptVm extends Vm {
     constructor() {
@@ -579,4 +590,5 @@ class ScriptVm extends Vm {
     }
 }
 
-module.exports = new ScriptVm();
+// module.exports = new ScriptVm();
+export const scriptVm = new ScriptVm();

@@ -37,7 +37,7 @@ import { deepCopy, deepEqual, isJSON } from "../../utils.mjs";
 import { nanohtml as html } from "nanohtml";
 import morph from "nanomorph/lib/morph";
 import sanitize from "sanitize-html";
-import Script from "../scripts/script";
+import Script from "../scripts/script.mjs";
 import { uiConsole } from "../../ui/ui-console.mjs";
 import UiTree from "../../ui/ui-tree.mjs";
 import UiDragResize from "../../ui/ui-dragresize.mjs";

@@ -49,8 +49,8 @@ module.exports.widgets = {
     range: require("./sliders/range"),
 
     // scripts
-    script: require("./scripts/script-widget"),
-    variable: require("./scripts/variable")
+    script: require("./scripts/script-widget.mjs"),
+    variable: require("./scripts/variable.mjs")
 };
 
 module.exports.categories = {
