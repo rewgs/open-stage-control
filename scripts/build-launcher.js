@@ -1,6 +1,6 @@
 // var build = require("./build.js");
 
-import build from "./build";
+import build from "./build.js";
 
 build({
     input: "../src/launcher/index.js",

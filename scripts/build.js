@@ -1,14 +1,18 @@
 // var browserify = require("browserify"),
 //     exorcist = require("exorcist"),
-//     licensify = require("licensify"),
+// licensify = require("licensify"),
 //     fs = require("fs"),
 //     path = require("path");
 
 import browserify from "browserify";
 import exorcist from "exorcist";
-import "licensify";
+import licensify from "licensify";
 import fs from "node:fs";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // module.exports = (opt) => {
 //     var { input, output, options, ignore, exclude, transforms, plugins } = opt,
