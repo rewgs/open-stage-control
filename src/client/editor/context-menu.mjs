@@ -9,7 +9,7 @@
 //     sessionManager;
 
 import { updateWidget } from "./data-workers.mjs";
-import { categories } from "../widgets";
+import { categories } from "../widgets/index.mjs";
 import widgetManager from "../managers/widgets.mjs";
 import { icon } from "../ui/utils";
 import editor from ".";

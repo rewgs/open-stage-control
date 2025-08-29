@@ -26,7 +26,7 @@ import Panel from "../widgets/containers/panel.mjs";
 import Matrix from "../widgets/containers/matrix.mjs";
 import Keyboard from "../widgets/containers/keyboard.mjs";
 import { widgetManager } from "../managers/widgets.mjs";
-import { widgets, categories } from "../widgets";
+import { widgets, categories } from "../widgets/index.mjs";
 
 var widgetIcons = {
     root: "bookmark",
@@ -105,9 +105,8 @@ class UiTree extends UiWidget {
             if (node.classList.contains("toggle")) {
                 var exp = node.parentNode.classList.toggle("expanded");
                 if (exp) {
-                    this.expanded[
-                        node.parentNode.getAttribute("data-widget")
-                    ] = true;
+                    this.expanded[node.parentNode.getAttribute("data-widget")] =
+                        true;
                 } else {
                     delete this.expanded[
                         node.parentNode.getAttribute("data-widget")

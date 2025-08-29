@@ -1,9 +1,13 @@
-var Knob = require("./knob"),
-    StaticProperties = require("../mixins/static_properties.mjs");
+// var Knob = require("./knob.mjs"),
+//     StaticProperties = require("../mixins/static_properties.mjs");
 
-module.exports = class Encoder extends (
-    StaticProperties(Knob, { angle: 360, range: { min: 0, max: 1 } })
-) {
+import Knob from "./knob.mjs";
+import { StaticProperties } from "../mixins/static_properties.mjs";
+
+export class Encoder extends StaticProperties(Knob, {
+    angle: 360,
+    range: { min: 0, max: 1 }
+}) {
     static description() {
         return "A knob that sends a relative direction information instead of an absolute value.";
     }
@@ -373,4 +377,4 @@ module.exports = class Encoder extends (
             this.ctx.stroke();
         }
     }
-};
+}

@@ -3,7 +3,7 @@
 var UiColorPicker = require("./ui-colorpicker.mjs");
 var UiModal = require("./ui-modal.mjs");
 var morph = require("nanomorph");
-var { defaults } = require("../widgets/");
+var { defaults } = require("../widgets/index.mjs");
 var html = require("nanohtml");
 var raw = require("nanohtml/raw");
 var fastdom = require("fastdom");

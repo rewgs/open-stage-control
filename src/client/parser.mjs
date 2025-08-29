@@ -5,7 +5,7 @@
 import widgetManager from "./managers/widgets.mjs";
 import stateManager from "./managers/state.mjs";
 import { deepCopy } from "./utils.mjs";
-import { widgets } from "./widgets";
+import { widgets } from "./widgets/index.mjs";
 
 var Parser = class Parser {
     constructor() {

@@ -7,7 +7,7 @@
 
 import Widget from "../common/widget.mjs";
 import { Xy } from "./xy.mjs";
-import Fader from "../sliders/fader";
+import Fader from "../sliders/fader.mjs";
 import { clip, mapToScale, hsbToRgb, rgbToHsb } from "../utils.mjs";
 import { nanohtml as html } from "nanohtml";
 import { touch_state as touchstate } from "../mixins/touch_state.mjs";

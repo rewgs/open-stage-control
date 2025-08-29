@@ -6,7 +6,7 @@
 //     chroma = require("chroma-js");
 
 import UiWidget from "./ui-widget.mjs";
-import { categories } from "../widgets";
+import { categories } from "../widgets/index.mjs";
 import { nanohtml as html } from "nanohtml";
 import raw from "nanohtml/raw";
 import { icon } from "./utils.mjs";

@@ -23,7 +23,7 @@ import {
     disableTraversingGestures
 } from "../../events/drag.mjs";
 import { setScrollbarColor } from "../../ui/utils.mjs";
-import Fader from "../sliders/fader";
+import Fader from "../sliders/fader.mjs";
 import Script from "../scripts/script.mjs";
 import { check } from "../../events/resize.mjs";
 import fastdom from "fastdom";

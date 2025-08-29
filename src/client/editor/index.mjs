@@ -21,7 +21,7 @@ import { keyboardjs as keyboardJS } from "keyboardjs";
 import { diffToWidget } from "./diff.mjs";
 import widgetManager from "../managers/widgets.mjs";
 import { deepCopy } from "../utils.mjs";
-import defaults from "../widgets/";
+import defaults from "../widgets/index.mjs";
 import { diff } from "jsondiffpatch";
 import UiSelectArea from "../ui/ui-selectarea.js";
 import UiInspector from "../ui/ui-inspector.js";

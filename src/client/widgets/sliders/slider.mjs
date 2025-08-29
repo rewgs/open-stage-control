@@ -1,10 +1,16 @@
-var { clip, mapToScale } = require("../utils"),
-    Canvas = require("../common/canvas"),
-    touchstate = require("../mixins/touch_state.mjs"),
-    doubleTap = require("../mixins/double_tap.mjs"),
-    html = require("nanohtml");
+// var { clip, mapToScale } = require("../utils"),
+//     Canvas = require("../common/canvas"),
+//     touchstate = require("../mixins/touch_state.mjs"),
+//     doubleTap = require("../mixins/double_tap.mjs"),
+//     html = require("nanohtml");
 
-class Slider extends Canvas {
+import { clip, mapToScale } from "../utils.mjs";
+import Canvas from "../common/canvas.mjs";
+import { touch_state as touchstate } from "../mixins/touch_state.mjs";
+import { double_tap as doubleTap } from "../mixins/double_tap.mjs";
+import { nanohtml as html } from "nanohtml";
+
+export class Slider extends Canvas {
     constructor(options) {
         super({ ...options, html: html` <canvas></canvas> ` });
 
@@ -362,4 +368,4 @@ Slider.dynamicProps = Slider.prototype.constructor.dynamicProps.concat([
     "knobSize"
 ]);
 
-module.exports = Slider;
+// module.exports = Slider;

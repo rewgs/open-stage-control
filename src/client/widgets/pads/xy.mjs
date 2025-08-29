@@ -4,7 +4,7 @@
 //     touchstate = require("../mixins/touch_state.mjs");
 
 import { Pad } from "./pad.mjs";
-import Fader from "../sliders/fader";
+import Fader from "../sliders/fader.mjs";
 import { double_tap as doubleTap } from "../mixins/double_tap.mjs";
 import { touch_state as touchstate } from "../mixins/touch_state.mjs";
 
