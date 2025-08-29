@@ -1,9 +1,14 @@
-var Widget = require("../common/widget.mjs"),
-    html = require("nanohtml"),
-    locales = require("../../locales/index.mjs"),
-    StaticProperties = require("../mixins/static_properties");
+// var Widget = require("../common/widget.mjs"),
+//     html = require("nanohtml"),
+//     locales = require("../../locales/index.mjs"),
+//     StaticProperties = require("../mixins/static_properties");
 
-class Frame extends StaticProperties(Widget, { bypass: true }) {
+import Widget from "../common/widget.mjs";
+import { nanohtml as html } from "nanohtml";
+import locales from "../../locales/index.mjs";
+import StaticProperties from "../mixins/static_properties";
+
+export class Frame extends StaticProperties(Widget, { bypass: true }) {
     static description() {
         return "Embed a web page in a frame. Note: some websites do not allow this.";
     }
@@ -81,4 +86,4 @@ class Frame extends StaticProperties(Widget, { bypass: true }) {
     }
 }
 
-module.exports = Frame;
+// module.exports = Frame;

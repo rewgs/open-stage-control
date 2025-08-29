@@ -1,9 +1,14 @@
-var Widget = require("../common/widget.mjs"),
-    morph = require("nanomorph"),
-    html = require("nanohtml"),
-    StaticProperties = require("../mixins/static_properties");
+// var Widget = require("../common/widget.mjs"),
+//     morph = require("nanomorph"),
+//     html = require("nanohtml"),
+//     StaticProperties = require("../mixins/static_properties");
 
-class Svg extends StaticProperties(Widget, { bypass: true }) {
+import Widget from "../common/widget.mjs";
+import morph from "nanomorph/lib/morph";
+import { nanohtml as html } from "nanohtml";
+import StaticProperties from "../mixins/static_properties";
+
+export class Svg extends StaticProperties(Widget, { bypass: true }) {
     static description() {
         return "Svg parser.";
     }
@@ -97,4 +102,4 @@ class Svg extends StaticProperties(Widget, { bypass: true }) {
 
 Svg.dynamicProps = Svg.prototype.constructor.dynamicProps.concat("svg");
 
-module.exports = Svg;
+// module.exports = Svg;

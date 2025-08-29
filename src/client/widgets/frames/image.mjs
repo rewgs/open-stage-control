@@ -1,11 +1,14 @@
-var Widget = require("../common/widget.mjs"),
-    html = require("nanohtml"),
-    { urlParser } = require("../utils"),
-    StaticProperties = require("../mixins/static_properties");
+// var Widget = require("../common/widget.mjs"),
+//     html = require("nanohtml"),
+//     { urlParser } = require("../utils"),
+//     StaticProperties = require("../mixins/static_properties");
 
-module.exports = class Image extends (
-    StaticProperties(Widget, { bypass: true })
-) {
+import Widget from "../common/widget.mjs";
+import { nanohtml as html } from "nanohtml";
+import { urlParser } from "../utils.mjs";
+import StaticProperties from "../mixins/static_properties";
+
+export class Image extends StaticProperties(Widget, { bypass: true }) {
     static description() {
         return "Load a image (url or base64-encoded).";
     }
@@ -148,4 +151,4 @@ module.exports = class Image extends (
     onRemove() {
         super.onRemove();
     }
-};
+}

@@ -1,10 +1,16 @@
-var Widget = require("../common/widget.mjs"),
-    morph = require("nanomorph"),
-    html = require("nanohtml"),
-    sanitizeHtml = require("sanitize-html"),
-    StaticProperties = require("../mixins/static_properties");
+// var Widget = require("../common/widget.mjs"),
+//     morph = require("nanomorph"),
+//     html = require("nanohtml"),
+//     sanitizeHtml = require("sanitize-html"),
+//     StaticProperties = require("../mixins/static_properties");
 
-class Html extends StaticProperties(Widget, { bypass: true }) {
+import Widget from "../common/widget.mjs";
+import morph from "nanomorph/lib/morph";
+import { nanohtml as html } from "nanohtml";
+import sanitize from "sanitize-html";
+import StaticProperties from "../mixins/static_properties";
+
+export class Html extends StaticProperties(Widget, { bypass: true }) {
     static description() {
         return "Simple HTML parser.";
     }
@@ -62,4 +68,4 @@ class Html extends StaticProperties(Widget, { bypass: true }) {
     }
 }
 
-module.exports = Html;
+// module.exports = Html;

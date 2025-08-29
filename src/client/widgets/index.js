@@ -25,7 +25,7 @@ module.exports.widgets = {
     image: require("./frames/image"),
     svg: require("./frames/svg"),
     html: require("./frames/html"),
-    frame: require("./frames/frame"),
+    frame: require("./frames/frame.mjs"),
 
     // graphs
     plot: require("./graphs/plot"),
