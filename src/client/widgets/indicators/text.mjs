@@ -1,8 +1,12 @@
-var { iconify } = require("../../ui/utils.mjs"),
-    Widget = require("../common/widget.mjs"),
-    html = require("nanohtml");
+// var { iconify } = require("../../ui/utils.mjs"),
+//     Widget = require("../common/widget.mjs"),
+//     html = require("nanohtml");
 
-module.exports = class Text extends Widget {
+import { iconify } from "../../ui/utils.mjs";
+import Widget from "../common/widget.mjs";
+import { nanohtml as html } from "nanohtml";
+
+export class Text extends Widget {
     static description() {
         return "Display text.";
     }
@@ -90,4 +94,4 @@ module.exports = class Text extends Widget {
         if (options.sync) this.changed(options);
         if (options.send) this.sendValue(null, { syncOnly: true });
     }
-};
+}

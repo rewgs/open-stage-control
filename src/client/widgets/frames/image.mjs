@@ -6,7 +6,7 @@
 import Widget from "../common/widget.mjs";
 import { nanohtml as html } from "nanohtml";
 import { urlParser } from "../utils.mjs";
-import StaticProperties from "../mixins/static_properties";
+import StaticProperties from "../mixins/static_properties.mjs";
 
 export class Image extends StaticProperties(Widget, { bypass: true }) {
     static description() {

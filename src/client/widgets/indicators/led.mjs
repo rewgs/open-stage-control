@@ -1,8 +1,12 @@
-var { mapToScale } = require("../utils"),
-    Widget = require("../common/widget.mjs"),
-    html = require("nanohtml");
+// var { mapToScale } = require("../utils"),
+//     Widget = require("../common/widget.mjs"),
+//     html = require("nanohtml");
 
-module.exports = class Led extends Widget {
+import { mapToScale } from "../utils.mjs";
+import Widget from "../common/widget.mjs";
+import { nanohtml as html } from "nanohtml";
+
+export class Led extends Widget {
     static description() {
         return "Intensity display.";
     }
@@ -132,4 +136,4 @@ module.exports = class Led extends Widget {
 
         this.container.style.setProperty("--color-led", c);
     }
-};
+}

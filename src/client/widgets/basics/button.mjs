@@ -6,7 +6,7 @@
 //     parser = require("../../parser.mjs");
 
 import Widget from "../common/widget.mjs";
-import { double_tap as doubleTap } from "../mixins/double_tap";
+import { double_tap as doubleTap } from "../mixins/double_tap.mjs";
 import { nanohtml as html } from "nanohtml";
 import { deepEqual, isJSON } from "../../utils.mjs";
 import { iconify } from "../../ui/utils.mjs";

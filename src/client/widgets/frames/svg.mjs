@@ -6,7 +6,7 @@
 import Widget from "../common/widget.mjs";
 import morph from "nanomorph/lib/morph";
 import { nanohtml as html } from "nanohtml";
-import StaticProperties from "../mixins/static_properties";
+import StaticProperties from "../mixins/static_properties.mjs";
 
 export class Svg extends StaticProperties(Widget, { bypass: true }) {
     static description() {

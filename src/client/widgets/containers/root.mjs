@@ -4,7 +4,7 @@
 //     mainMenu;
 
 import Panel from "./panel.mjs";
-import StaticProperties from "../mixins/static_properties";
+import StaticProperties from "../mixins/static_properties.mjs";
 import { updateMobileThemeColor } from "../../ui/utils.mjs";
 
 let mainMenu;

@@ -119,5 +119,6 @@
         "semi": true,
         "singleQuote": false,
         "useTabs": false
-    }
+    },
+    "type": "module"
 }

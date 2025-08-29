@@ -1,5 +1,5 @@
 var Widget = require("../common/widget.mjs"),
-    StaticProperties = require("../mixins/static_properties");
+    StaticProperties = require("../mixins/static_properties.mjs");
 
 module.exports = class Variable extends (
     StaticProperties(Widget, { interaction: false, visible: false })

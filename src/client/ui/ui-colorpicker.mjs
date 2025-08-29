@@ -1,5 +1,5 @@
 // var UiWidget = require("./ui-widget");
-var Rgb = require("../widgets/pads/rgb");
+var Rgb = require("../widgets/pads/rgb.mjs");
 // var html = require("nanohtml");
 // var chroma = require("chroma-js");
 var resize = require("../events/resize");

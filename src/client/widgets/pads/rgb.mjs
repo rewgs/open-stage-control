@@ -1,14 +1,21 @@
-var Widget = require("../common/widget.mjs"),
-    Xy = require("./xy"),
-    Fader = require("../sliders/fader"),
-    { clip, mapToScale, hsbToRgb, rgbToHsb } = require("../utils"),
-    html = require("nanohtml"),
-    touchstate = require("../mixins/touch_state");
+// var Widget = require("../common/widget.mjs"),
+//     Xy = require("./xy.mjs"),
+//     Fader = require("../sliders/fader"),
+//     { clip, mapToScale, hsbToRgb, rgbToHsb } = require("../utils"),
+//     html = require("nanohtml"),
+//     touchstate = require("../mixins/touch_state.mjs");
+
+import Widget from "../common/widget.mjs";
+import { Xy } from "./xy.mjs";
+import Fader from "../sliders/fader";
+import { clip, mapToScale, hsbToRgb, rgbToHsb } from "../utils.mjs";
+import { nanohtml as html } from "nanohtml";
+import { touch_state as touchstate } from "../mixins/touch_state.mjs";
 
 var faderDefaults = Fader.defaults()._props(),
     xyDefaults = Xy.defaults()._props();
 
-module.exports = class Rgb extends Widget {
+export class Rgb extends Widget {
     static description() {
         return "Color picker with optional alpha slider.";
     }
@@ -332,7 +339,7 @@ module.exports = class Rgb extends Widget {
         if (this.alpha) this.alpha.onRemove();
         super.onRemove();
     }
-};
+}
 
 class HueFader extends Fader {
     draw() {

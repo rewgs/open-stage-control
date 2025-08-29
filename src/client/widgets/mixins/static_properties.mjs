@@ -1,0 +1,22 @@
+// let StaticProperties = (superclass, props) =>
+//     class extends superclass {
+//         createPropsCache() {
+//             super.createPropsCache();
+//
+//             for (var k in props) {
+//                 this.cachedProps[k] = props[k];
+//             }
+//         }
+//     };
+// module.exports = StaticProperties;
+
+export const StaticProperties = (superclass, props) =>
+    class extends superclass {
+        createPropsCache() {
+            super.createPropsCache();
+
+            for (var k in props) {
+                this.cachedProps[k] = props[k];
+            }
+        }
+    };

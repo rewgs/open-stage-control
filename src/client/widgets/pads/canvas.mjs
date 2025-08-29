@@ -1,9 +1,14 @@
-var Canvas = require("../common/canvas"),
-    Script = require("../scripts/script"),
-    widgetManager = require("../../managers/widgets.mjs"),
-    html = require("nanohtml");
+// var Canvas = require("../common/canvas"),
+//     Script = require("../scripts/script"),
+//     widgetManager = require("../../managers/widgets.mjs"),
+//     html = require("nanohtml");
 
-class CanvasWidget extends Canvas {
+import Canvas from "../common/canvas.mjs";
+import Script from "../scripts/script";
+import { widgetManager } from "../../managers/widgets.mjs";
+import { nanohtml as html } from "nanohtml";
+
+export class CanvasWidget extends Canvas {
     static description() {
         return "Multitouch canvas widget with user-defined drawing functions and touch reactions.";
     }
@@ -249,4 +254,4 @@ class CanvasWidget extends Canvas {
 CanvasWidget.dynamicProps =
     CanvasWidget.prototype.constructor.dynamicProps.concat([]);
 
-module.exports = CanvasWidget;
+// module.exports = CanvasWidget;

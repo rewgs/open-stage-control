@@ -9,7 +9,7 @@
 import Panel from "./panel.mjs";
 import { icon, iconify } from "../../ui/utils.mjs";
 import { check } from "../../events/resize.mjs";
-import { double_tap as doubleTap } from "../mixins/double_tap";
+import { double_tap as doubleTap } from "../mixins/double_tap.mjs";
 import { nanohtml as html } from "nanohtml";
 import raw from "nanohtml/raw";
 import iOS from "../../ui/ios.mjs";

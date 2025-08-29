@@ -22,25 +22,25 @@ module.exports.widgets = {
     patchbaynode: require("./containers/patchbay.mjs").PatchBayNode,
 
     // frames
-    image: require("./frames/image"),
-    svg: require("./frames/svg"),
-    html: require("./frames/html"),
+    image: require("./frames/image.mjs"),
+    svg: require("./frames/svg.mjs"),
+    html: require("./frames/html.mjs"),
     frame: require("./frames/frame.mjs"),
 
     // graphs
-    plot: require("./graphs/plot"),
-    eq: require("./graphs/eq"),
-    visualizer: require("./graphs/visualizer"),
+    plot: require("./graphs/plot.mjs"),
+    eq: require("./graphs/eq.mjs"),
+    visualizer: require("./graphs/visualizer.mjs"),
 
     // indicators
-    led: require("./indicators/led"),
-    text: require("./indicators/text"),
+    led: require("./indicators/led.mjs"),
+    text: require("./indicators/text.mjs"),
 
     // pads
-    xy: require("./pads/xy"),
-    rgb: require("./pads/rgb"),
-    multixy: require("./pads/multixy"),
-    canvas: require("./pads/canvas"),
+    xy: require("./pads/xy.mjs"),
+    rgb: require("./pads/rgb.mjs"),
+    multixy: require("./pads/multixy.mjs"),
+    canvas: require("./pads/canvas.mjs"),
 
     // sliders
     fader: require("./sliders/fader"),

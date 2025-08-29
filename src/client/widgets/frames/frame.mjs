@@ -6,7 +6,7 @@
 import Widget from "../common/widget.mjs";
 import { nanohtml as html } from "nanohtml";
 import locales from "../../locales/index.mjs";
-import StaticProperties from "../mixins/static_properties";
+import StaticProperties from "../mixins/static_properties.mjs";
 
 export class Frame extends StaticProperties(Widget, { bypass: true }) {
     static description() {
