@@ -1,8 +1,12 @@
-var Panel = require("./panel.mjs"),
-    resize = require("../../events/resize"),
-    { iconify } = require("../../ui/utils.mjs");
+// var Panel = require("./panel.mjs"),
+//     resize = require("../../events/resize"),
+//     { iconify } = require("../../ui/utils.mjs");
 
-class Tab extends Panel {
+import Panel from "./panel.mjs";
+import { check } from "../../events/resize.mjs";
+import { iconify } from "../../ui/utils.mjs";
+
+export class Tab extends Panel {
     static description() {
         return "Tabbed panel widget";
     }
@@ -68,7 +72,8 @@ class Tab extends Panel {
         this.container.appendChild(this.widget);
         this.detached = false;
         this.setVisibility();
-        resize.check(this.widget, true);
+        // resize.check(this.widget, true);
+        check(this.widget, true);
     }
 
     isVisible() {
@@ -82,6 +87,7 @@ class Tab extends Panel {
             case "label":
                 this.updateLabel();
             case "visible":
+                check(this.widget, true);
                 resize.check(this.widget, true);
             case "colorText":
             case "colorWidget":
@@ -99,4 +105,4 @@ class Tab extends Panel {
 
 Tab.dynamicProps = Tab.prototype.constructor.dynamicProps.concat("label");
 
-module.exports = Tab;
+// module.exports = Tab;

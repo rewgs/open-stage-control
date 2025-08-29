@@ -1,9 +1,15 @@
-var Panel = require("./panel.mjs"),
-    StaticProperties = require("../mixins/static_properties"),
-    { updateMobileThemeColor } = require("../../ui/utils.mjs"),
-    mainMenu;
+// var Panel = require("./panel.mjs"),
+//     StaticProperties = require("../mixins/static_properties"),
+//     { updateMobileThemeColor } = require("../../ui/utils.mjs"),
+//     mainMenu;
 
-class Root extends StaticProperties(Panel, {
+import Panel from "./panel.mjs";
+import StaticProperties from "../mixins/static_properties";
+import { updateMobileThemeColor } from "../../ui/utils.mjs";
+
+let mainMenu;
+
+export class Root extends StaticProperties(Panel, {
     visible: true,
     label: false,
     id: "root"
@@ -107,4 +113,4 @@ class Root extends StaticProperties(Panel, {
 
 Root.dynamicProps = Root.prototype.constructor.dynamicProps.concat("hideMenu");
 
-module.exports = Root;
+// module.exports = Root;

@@ -21,7 +21,7 @@ import morph from "nanomorph/lib/morph";
 import locales from "../locales/index.mjs";
 import raw from "nanohtml/raw";
 import { icon } from "./utils.mjs";
-import Root from "../widgets/containers/root";
+import Root from "../widgets/containers/root.mjs";
 import Panel from "../widgets/containers/panel.mjs";
 import Matrix from "../widgets/containers/matrix.mjs";
 import Keyboard from "../widgets/containers/keyboard.mjs";
@@ -105,8 +105,9 @@ class UiTree extends UiWidget {
             if (node.classList.contains("toggle")) {
                 var exp = node.parentNode.classList.toggle("expanded");
                 if (exp) {
-                    this.expanded[node.parentNode.getAttribute("data-widget")] =
-                        true;
+                    this.expanded[
+                        node.parentNode.getAttribute("data-widget")
+                    ] = true;
                 } else {
                     delete this.expanded[
                         node.parentNode.getAttribute("data-widget")

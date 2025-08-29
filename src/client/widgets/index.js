@@ -11,8 +11,8 @@ module.exports.widgets = {
     // containers
     panel: require("./containers/panel.mjs"),
     folder: require("./containers/folder.mjs"),
-    root: require("./containers/root"),
-    tab: require("./containers/tab"),
+    root: require("./containers/root.mjs"),
+    tab: require("./containers/tab.mjs"),
     modal: require("./containers/modal.mjs"),
     clone: require("./containers/clone"),
     fragment: require("./containers/fragment.mjs"),

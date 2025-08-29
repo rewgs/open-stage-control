@@ -10,8 +10,8 @@ import UiWidget from "./ui-widget.mjs";
 import { keyboardjs as keyboardJS } from "keyboardjs";
 import { nanohtml as html } from "nanohtml";
 import fastdom from "fastdom";
-import Tab from "../widgets/containers/tab";
-import Root from "../widgets/containers/root";
+import Tab from "../widgets/containers/tab.mjs";
+import Root from "../widgets/containers/root.mjs";
 import Folder from "../widgets/containers/folder.mjs";
 
 class UiDragResize extends UiWidget {
