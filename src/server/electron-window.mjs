@@ -255,7 +255,8 @@ function intersectionArea(a, b) {
     return width * height;
 }
 
-export default function (options = {}) {
+// export default function (options = {}) {
+export function window(options = {}) {
     var window;
 
     window = new BrowserWindow({

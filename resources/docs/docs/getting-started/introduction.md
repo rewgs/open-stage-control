@@ -4,12 +4,11 @@ Welcome to Open Stage Control documentation. Along these pages you'll learn how 
 
 Open Stage Control consists of 3 modules: the server, the launcher and the client.
 
-The **server** is the core of the software, it is responsible for sending and receiving all osc/midi messages, and act as a web server that serves the clients web application. It is written in Javascript and runs with Electron, a cross-platform framework based on Chromium. By default, the server always opens a client window when it starts but it can be run in *headless* mode, without any window.
+The **server** is the core of the software, it is responsible for sending and receiving all osc/midi messages, and act as a web server that serves the clients web application. It is written in Javascript and runs with Electron, a cross-platform framework based on Chromium. By default, the server always opens a client window when it starts but it can be run in _headless_ mode, without any window.
 
 The **launcher** provides a simple way to configure and start the server. It appears whenever the server is not launched from a terminal or without being configured.
 
 The **client** is the web application made available by the server when it starts. Any compatible browser that connects to the server by browsing to its address will create a new client instance and be able to open and modify sessions.
-
 
 ## Requirements
 
@@ -21,7 +20,6 @@ The **client** is compatible with the following browsers:
 - Chromium / Chrome: version `60` and higher
 
 iOS devices must be of version `10.3` or higher.
-
 
 ## Installation
 
@@ -46,7 +44,6 @@ iOS devices must be of version `10.3` or higher.
     - [Download](/download) `open-stage-control-VERSION-osx-x64.zip`
     - Extract it in the location of your choice
     - Drag `open-stage-control.app` in your `Application` folder
-
 
 === "Mac Silicon (arm)"
 

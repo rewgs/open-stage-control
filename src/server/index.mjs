@@ -1,5 +1,26 @@
 // require("source-map-support").install({ handleUncaughtExceptions: false });
 import { install } from "source-map-support";
+import { dialog } from "electron";
+import app from "./electron-app.mjs";
+import { window } from "./electron-window.mjs";
+import { QRCode } from "qrcode";
+import { fork } from "child_process";
+import MidiConverter from "./midi.mjs";
+
+// TODO: Change to ESM import
+var server = require("./server.mjs");
+
+// var osc = require("./osc/index.mjs");
+import osc from "./osc/index.mjs";
+
+// TODO: Change to ESM import
+var callbacks = require("./callbacks.mjs");
+
+// NOTE: zeroconf just imports and exports bonjour...just gonna replace that.
+// var zeroconf = require("./zeroconf.mjs");
+// import zeroconf from "./zeroconf.mjs";
+import bonjour from "bonjour";
+
 install({ handleUncaughtExceptions });
 
 // var dev = process.argv[0].includes("node_modules"),
@@ -14,12 +35,13 @@ install({ handleUncaughtExceptions });
 
 import "./settings.mjs";
 import { DocsServer } from "./docs-server.mjs";
+import { Server } from "https";
 
 const dev = process.argv[0].includes("node_modules");
 
 // This may be able to be put down in openDocs().
 let docsServer;
-let app = null;
+// let app = null;
 let launcher = null;
 let tray = null;
 let clientWindows = [];
@@ -65,20 +87,24 @@ if (!process.versions.electron || process.env.ELECTRON_RUN_AS_NODE) {
     nodeMode();
 } else {
     try {
-        require("electron").dialog.showErrorBox = (title, err) => {
-            console.error(title + ": " + err);
-        };
+        // require("electron").dialog.showErrorBox = (title, err) => {
+        //     console.error(title + ": " + err);
+        // };
+        dialog.showErrorBox() = (title, err) => {
+            console.error(`${title}: ${err}`)
+        }
     } catch (e) {
         nodeMode();
     }
 }
 
 function openClient() {
-    var app = require("./electron-app.mjs");
+    // var app = require("./electron-app.mjs");
     var address = settings.appAddresses()[0];
 
     var launch = () => {
-        var win = require("./electron-window.mjs")({
+        // var win = require("./electron-window.mjs")({
+        const win = window({
             address: address,
             shortcuts: true,
             fullscreen: settings.read("fullscreen"),
@@ -94,26 +120,27 @@ function openClient() {
         });
         clientWindows.push(win);
     };
-    if (app.isReady()) {
+    if (a.isReady()) {
         launch();
     } else {
-        app.on("ready", function () {
+        a.on("ready", function () {
             launch();
         });
     }
 }
 
 function showQRCode() {
-    var QRCode = require("qrcode"),
-        addresses = settings
-            .appAddresses()
-            .filter(
-                (a) => !a.includes("127.0.0.1") && !a.includes("localhost")
-            );
+    // TODO: Change to ESM import
+    // var QRCode = require("qrcode"),
+    var addresses = settings.appAddresses()
+        .filter(
+            (a) => !a.includes("127.0.0.1") && !a.includes("localhost")
+        );
 
     for (var add of addresses) {
         if (launcher) {
-            QRCode.toString(
+            const qrCode = new QRCode();
+            qrCode.toString(
                 add,
                 { type: "svg", small: true, margin: 1 },
                 (err, qr) => {
@@ -131,7 +158,7 @@ function showQRCode() {
                 launcher.webContents.send("stdout", "(" + add + ")");
             }
         } else {
-            QRCode.toString(
+            qrCode.toString(
                 add,
                 { type: "terminal", small: true },
                 (err, qr) => {
@@ -158,9 +185,8 @@ function startServerProcess() {
         }
     }
 
-    var { fork } = require("child_process");
-
-    serverProcess = fork(app.getAppPath(), args, {
+    // var { fork } = require("child_process");
+    serverProcess = fork(a.getAppPath(), args, {
         stdio: "pipe",
         env: { ...process.env, OSC_SERVER_PROCESS: 1 }
     });
@@ -243,20 +269,21 @@ function startLauncher() {
     global.launcherSharedGlobals = {
         settings: settings,
         openDocs: openDocs,
+        // TODO: Change to ESM import
         midilist: require("./midi.mjs").list
     };
-    var path = require("path"),
-        address =
-            "file://" +
-            path.resolve(__dirname + "/../launcher/" + "index.html"),
-        { ipcMain } = require("electron");
+    // var path = require("path"),
+    //     address =
+    //         "file://" +
+    //         path.resolve(__dirname + "/../launcher/" + "index.html"),
+    //     { ipcMain } = require("electron");
 
     // @electron/remote won't work without this hack
     process.mainModule = { require };
 
     require("@electron/remote/main").initialize();
 
-    app.on("ready", function () {
+    a.on("ready", function () {
         launcher = require("./electron-window.mjs")({
             address: address,
             shortcuts: dev,
@@ -357,10 +384,12 @@ if (settings.read("docs")) {
 } else if (node || (settings.cli && settings.read("no-gui"))) {
     // node mode: minimal server startup
 
-    var server = require("./server.mjs"),
-        osc = require("./osc/index.mjs"),
-        callbacks = require("./callbacks.mjs"),
-        zeroconf = require("./zeroconf.mjs");
+    // TODO: Change to ESM import
+    // Moved to top
+    // var server = require("./server.mjs");
+    // var osc = require("./osc/index.mjs");
+    // var callbacks = require("./callbacks.mjs");
+    // var zeroconf = require("./zeroconf.mjs");
 
     server.bindCallbacks(callbacks);
 
@@ -368,12 +397,14 @@ if (settings.read("docs")) {
 
     var closeServer = () => {
         osc.server.stop();
-        zeroconf.unpublishAll();
+        // zeroconf.unpublishAll();
+        bonjour.unpublishAll();
     };
 
     try {
-        let { app } = require("electron");
-        app.on("ready", () => {
+        // TODO: Change to ESM import
+        let { app, dialog } = require("electron");
+        a.on("ready", () => {
             process.on("SIGINT", function () {
                 closeServer();
                 process.exit(0);
@@ -395,7 +426,7 @@ if (settings.read("docs")) {
     // - electron process: launcher and/or built-in client(s)
     // - node process: server (node mode in a forked process)
 
-    app = require("./electron-app.mjs");
+    // a = require("./electron-app.mjs");
 
     app.on("ready", () => {
         process.on("SIGINT", function () {

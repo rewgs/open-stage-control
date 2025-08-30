@@ -1,8 +1,8 @@
 from head import *
 from list import *
-from utils import *
 from mtc import *
 from rpn import *
+from utils import *
 
 ipc_send('version', '1.23.0')
 
