@@ -2,39 +2,39 @@ require("./polyfills");
 require("./globals");
 
 document.addEventListener("DOMContentLoaded", function (event) {
-  require("./stacktrace");
+    require("./stacktrace");
 
-  var locales = require("./locales");
+    var locales = require("./locales");
 
-  DOM.init();
+    DOM.init();
 
-  var uiLoading = require("./ui/ui-loading");
-  uiLoading(locales("loading_server"));
+    var uiLoading = require("./ui/ui-loading");
+    uiLoading(locales("loading_server"));
 
-  function init() {
-    setTimeout(() => {
-      var ipc = require("./ipc/"),
-        backup = require("./backup");
+    function init() {
+        setTimeout(() => {
+            var ipc = require("./ipc/"),
+                backup = require("./backup");
 
-      ipc.init();
+            ipc.init();
 
-      require("./ui/init");
+            require("./ui/init");
 
-      document.title = TITLE;
+            document.title = TITLE;
 
-      ipc.send("open", { hotReload: backup.exists });
+            ipc.send("open", { hotReload: backup.exists });
 
-      window.onunload = () => {
-        ipc.send("close");
-      };
+            window.onunload = () => {
+                ipc.send("close");
+            };
 
-      backup.load();
-    }, 100);
-  }
+            backup.load();
+        }, 100);
+    }
 
-  if (document.requestStorageAccess) {
-    document.requestStorageAccess().then(init, init);
-  } else {
-    init();
-  }
+    if (document.requestStorageAccess) {
+        document.requestStorageAccess().then(init, init);
+    } else {
+        init();
+    }
 });

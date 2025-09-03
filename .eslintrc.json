@@ -34,7 +34,7 @@
         ],
         "space-before-function-paren": ["error", "never"],
         "indent": [
-            "error",
+            "warn",
             4,
             {
                 "SwitchCase": 1,
@@ -45,8 +45,8 @@
             }
         ],
         "linebreak-style": ["error", "unix"],
-        "quotes": ["error", "single", { "allowTemplateLiterals": true }],
-        "semi": ["error", "never"]
+        "quotes": ["warn", "double", { "allowTemplateLiterals": true }],
+        "semi": ["warn", "always"]
     },
     "globals": {
         "module": true
