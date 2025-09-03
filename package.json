@@ -28,10 +28,8 @@
     "@electron/remote": "2.0.8",
     "ace-builds": "1.39.0",
     "ansi-html": "0.0.9",
-    "babelify": "10.0.0",
     "balanced-match": "2.0.0",
     "bonjour": "github:jean-emmanuel/bonjour",
-    "browserify": "17.0.0",
     "chokidar": "3.5.3",
     "chroma-js": "2.4.2",
     "core-js": "3.22.5",
@@ -42,7 +40,6 @@
     "electron-packager-plugin-non-proprietary-codecs-ffmpeg": "1.0.2",
     "env-paths": "2.2.1",
     "eslint": "8.16.0",
-    "exorcist": "2.0.0",
     "fastdom": "1.0.10",
     "file-saver": "2.0.5",
     "gyronorm": "2.0.6",
@@ -66,7 +63,6 @@
     "qrcode": "1.5.1",
     "replacestream": "4.0.3",
     "sanitize-html": "1.27.5",
-    "sass": "1.89.2",
     "scope-css": "1.2.1",
     "screenfull": "5.2.0",
     "semver": "7.3.7",
@@ -75,7 +71,6 @@
     "source-map-support": "0.5.21",
     "stacktrace-js": "2.0.2",
     "through": "2.3.8",
-    "uglifyify": "5.0.2",
     "webworkify": "1.5.0",
     "ws": "8.6.0",
     "yargs": "17.5.1"
@@ -93,16 +88,16 @@
     "package-node": "node scripts/package-node.js",
     "deb64": "electron-installer-debian --src dist/open-stage-control-linux-x64/ --arch amd64 --dest dist/open-stage-control-linux-x64/ --icon resources/images/logo.png",
     "rpm64": "electron-installer-redhat --src dist/open-stage-control-linux-x64/ --arch x86_64 --dest dist/open-stage-control-linux-x64/ --icon resources/images/logo.png",
-    "build-css": "node scripts/build-css.js",
+    "build-css": "vite build --config vite.css.config.js",
     "build-js": "npm run build-launcher-js && npm run build-client-js && npm run build-server-js",
-    "build-client-js": "node scripts/build-client.js",
-    "build-launcher-js": "node scripts/build-launcher.js",
-    "build-server-js": "node scripts/build-server.js",
-    "watch-client": "npm run build-client-js -- --watch",
-    "watch-browser": "npm run build-client-js -- --watch",
-    "watch-css": "nodemon --watch src/scss -e scss -x \"npm run build-css -- --reload\"",
-    "watch-server": "nodemon --watch src/server/ -e js -x \"npm run build-server-js\"",
-    "watch-launcher": "nodemon --watch src/launcher/ -e js -x \"npm run build-launcher-js\"",
+    "build-client-js": "vite build --config vite.client.config.js",
+    "build-launcher-js": "vite build --config vite.launcher.config.js",
+    "build-server-js": "node scripts/copy-server-files.js && vite build --config vite.server.config.js",
+    "watch-client": "vite build --config vite.client.config.js --watch",
+    "watch-browser": "vite build --config vite.client.config.js --watch",
+    "watch-css": "vite build --config vite.css.config.js --watch",
+    "watch-server": "vite build --config vite.server.config.js --watch",
+    "watch-launcher": "vite build --config vite.launcher.config.js --watch",
     "build-docs": "node scripts/build-widgets-reference.js > resources/docs/docs/widgets/properties-reference.md && cd resources && python3 -m mkdocs build",
     "test": "eslint src && npm run build && node tests/test.js"
   },
@@ -110,6 +105,16 @@
     "node": ">=16 <=20"
   },
   "devDependencies": {
-    "watchify": "4.0.0"
+    "@vitejs/plugin-legacy": "^7.2.1",
+    "buffer": "^6.0.3",
+    "escaper": "^3.0.6",
+    "events": "^3.3.0",
+    "process": "^0.11.10",
+    "sass": "^1.92.0",
+    "stream-browserify": "^3.0.0",
+    "vite": "^7.1.4"
+  },
+  "volta": {
+    "node": "20.19.4"
   }
 }
