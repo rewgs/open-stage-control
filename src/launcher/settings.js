@@ -1,7 +1,7 @@
 var {ipcRenderer} = require('electron'),
     remote = require('@electron/remote'),
-    {dialog} = remote.require('electron'),
     fs = remote.require('fs'),
+    customDialog = remote.require('../launcher/custom-dialog'),
     {settings} = remote.getGlobal('launcherSharedGlobals'),
     {icon} = require('../client/ui/utils'),
     html = require('nanohtml'),
@@ -48,7 +48,7 @@ class Settings {
 
     saveAs() {
 
-        dialog.showSaveDialog({
+        customDialog.showSaveDialog({
             title: 'Open File',
             filters:[{name: 'OSC Config (.config)', extensions: ['config']}],
             properties: ['openFile']
@@ -63,7 +63,7 @@ class Settings {
 
     load() {
 
-        dialog.showOpenDialog({
+        customDialog.showOpenDialog({
             title: 'Open File',
             filters:[{name: 'OSC Config (.config)', extensions: ['config']}],
             properties: ['openFile']
@@ -137,7 +137,7 @@ class Settings {
 
                 browse.addEventListener('click', (e)=>{
                     e.preventDefault()
-                    dialog.showOpenDialog({
+                    customDialog.showOpenDialog({
                         title: 'Open ' + (data.file.folder ? 'folder' : 'file'),
                         filters:[{name: data.file.name, extensions: data.file.extensions}],
                         properties: data.file.folder ? ['openDirectory'] : ['openFile']
