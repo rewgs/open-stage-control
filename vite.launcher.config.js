@@ -19,8 +19,8 @@ const config = {
                 entryFileNames: "open-stage-control-launcher.js",
                 extend: true,
                 globals: {
-                    electron: 'require("electron")',
-                    "@electron/remote": 'require("@electron/remote")'
+                    electron: "require('electron')",
+                    "@electron/remote": "require('@electron/remote')"
                 }
             }
         },
@@ -30,7 +30,7 @@ const config = {
         }
     },
     define: {
-        "process.env.NODE_ENV": '"production"',
+        "process.env.NODE_ENV": "production",
         global: "window"
     },
     optimizeDeps: {

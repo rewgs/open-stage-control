@@ -1,21 +1,34 @@
 const fs = require("fs");
 const path = require("path");
 
-// Create the server directory if it doesn't exist
-const serverDir = path.join(__dirname, "../app/server");
-if (!fs.existsSync(serverDir)) {
-  fs.mkdirSync(serverDir, { recursive: true });
+function copyRecursively(src, dest) {
+    // Create destination directory if it doesn't exist
+    if (!fs.existsSync(dest)) {
+        fs.mkdirSync(dest, { recursive: true });
+    }
+
+    // Read source directory
+    const entries = fs.readdirSync(src, { withFileTypes: true });
+
+    // Copy each entry
+    entries.forEach(entry => {
+        const srcPath = path.join(src, entry.name);
+        const destPath = path.join(dest, entry.name);
+
+        if (entry.isDirectory()) {
+            copyRecursively(srcPath, destPath);
+        } else if (entry.isFile() && entry.name.endsWith(".js")) {
+            fs.copyFileSync(srcPath, destPath);
+        }
+    });
 }
 
-// Copy all server files
+// Create the server directory if it doesn't exist
+const serverDir = path.join(__dirname, "../app/server");
 const srcDir = path.join(__dirname, "../src/server");
-const files = fs.readdirSync(srcDir);
 
-files.forEach((file) => {
-  if (file.endsWith(".js")) {
-    fs.copyFileSync(path.join(srcDir, file), path.join(serverDir, file));
-  }
-});
+// Copy all server files recursively
+copyRecursively(srcDir, serverDir);
 
 // Copy Python files if they exist
 const pythonSrcDir = path.join(srcDir, "python");

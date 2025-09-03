@@ -83,7 +83,7 @@
     "scripts": {
         "postinstall": "echo '\\033[36m=> Dependencies installed successfully. Run \"npm run build\" to build the assets.\\033[0m\n'",
         "start": "electron app/",
-        "build": "npm run build-css && npm run build-js && node scripts/copy-assets.js && echo '\\033[36m=> JS and CSS assets built successfully. Run \"npm run package\" to build an executable or \"npm start\" to run the app.\\033[0m\n'",
+        "build": "npm run build-css && npm run build-js && node scripts/copy-assets.js && node scripts/copy-app-files.js && echo '\\033[36m=> JS and CSS assets built successfully. Run \"npm run package\" to build an executable or \"npm start\" to run the app.\\033[0m\n'",
         "package": "node scripts/package.js",
         "package-node": "node scripts/package-node.js",
         "deb64": "electron-installer-debian --src dist/open-stage-control-linux-x64/ --arch amd64 --dest dist/open-stage-control-linux-x64/ --icon resources/images/logo.png",
