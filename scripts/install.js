@@ -3,8 +3,21 @@
  * Copies package in `dist` to `/usr/bin/Open Stage Control/${version}`
  */
 
-const path = require('path')
 const fs = require('fs')
+const path = require('path')
 
-src = path.resolve(__dirname + '/../dist/open-stage-control-linux-x64')
-// dst = "/usr/bin/Open Stage Control/" // TODO: Get version and copy src dir to dir with version number instead of arch 
+const data = require('../package.json')
+
+const src = path.resolve(`${__dirname}/../dist/open-stage-control-linux-x64`)
+const dst = '/usr/local/Open Stage Control'
+
+// FIXME: Requires sudo
+if (!fs.existsSync(dst)) {
+    fs.mkdirSync(dst, { recursive: true })
+}
+
+// FIXME: Requires sudo
+fs.cpSync(src, `${dst}/${data.version}`, { recursive: true }, (err) => {
+    if (err) throw err
+    console.log(`Copied ${src} to ${dst}`)
+})
